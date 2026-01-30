@@ -1,0 +1,148 @@
+[
+  {
+    "order_id": "ORD1001",
+    "order_date": "2025-01-10",
+    "customer": {
+      "customer_id": "CUST01",
+      "name": "Rahul Sharma",
+      "city": "Delhi"
+    },
+    "items": [
+      {
+        "product_id": "P101",
+        "product_name": "Laptop",
+        "category": "Electronics",
+        "price": 55000,
+        "quantity": 1
+      },
+      {
+        "product_id": "P102",
+        "product_name": "Mouse",
+        "category": "Electronics",
+        "price": 500,
+        "quantity": 2
+      }
+    ],
+    "payment": {
+      "method": "Credit Card",
+      "status": "Success"
+    }
+  },
+  {
+    "order_id": "ORD1002",
+    "order_date": "2025-01-11",
+    "customer": {
+      "customer_id": "CUST02",
+      "name": "Sneha Verma",
+      "city": "Mumbai"
+    },
+    "items": [
+      {
+        "product_id": "P103",
+        "product_name": "Mobile Phone",
+        "category": "Electronics",
+        "price": 32000,
+        "quantity": 1
+      }
+    ],
+    "payment": {
+      "method": "UPI",
+      "status": "Success"
+    }
+  },
+  {
+    "order_id": "ORD1003",
+    "order_date": "2025-01-12",
+    "customer": {
+      "customer_id": "CUST03",
+      "name": "Amit Patel",
+      "city": "Pune"
+    },
+    "items": [
+      {
+        "product_id": "P201",
+        "product_name": "Dining Table",
+        "category": "Furniture",
+        "price": 18000,
+        "quantity": 1
+      },
+      {
+        "product_id": "P202",
+        "product_name": "Chair",
+        "category": "Furniture",
+        "price": 3500,
+        "quantity": 4
+      }
+    ],
+    "payment": {
+      "method": "Cash",
+      "status": "Failed"
+    }
+  },
+  {
+    "order_id": "ORD1004",
+    "order_date": "2025-01-13",
+    "customer": {
+      "customer_id": "CUST04",
+      "name": "Neha Singh",
+      "city": "Bangalore"
+    },
+    "items": [
+      {
+        "product_id": "P104",
+        "product_name": "Headphones",
+        "category": "Electronics",
+        "price": 2500,
+        "quantity": 2
+      }
+    ],
+    "payment": {
+      "method": "Debit Card",
+      "status": "Success"
+    }
+  },
+  {
+    "order_id": "ORD1005",
+    "order_date": "2025-01-14",
+    "customer": {
+      "customer_id": "CUST05",
+      "name": "Karan Mehta",
+      "city": "Delhi"
+    },
+    "items": [
+      {
+        "product_id": "P301",
+        "product_name": "Office Chair",
+        "category": "Furniture",
+        "price": 12000,
+        "quantity": 1
+      }
+    ],
+    "payment": {
+      "method": "Net Banking",
+      "status": "Success"
+    }
+  },
+  {
+    "order_id": "ORD1006",
+    "order_date": "2025-01-15",
+    "customer": {
+      "customer_id": "CUST06",
+      "name": "Pooja Iyer",
+      "city": "Chennai"
+    },
+    "items": [
+      {
+        "product_id": "P105",
+        "product_name": "Smart Watch",
+        "category": "Electronics",
+        "price": 9000,
+        "quantity": 2
+      }
+    ],
+    "payment": {
+      "method": "UPI",
+      "status": "Success"
+    }
+  }
+]
