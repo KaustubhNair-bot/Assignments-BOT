@@ -1,0 +1,9 @@
+Order ID,Order Date,Customer ID,Customer Name,Customer City,Product Name,Product Category,Quantity Sold,Total Amount,Payment Method,Order Status,High Value Order Flag
+ORD1001,2025-01-10,CUST01,Rahul Sharma,Delhi,Laptop,Electronics,1,55000,Credit Card,Success,Yes
+ORD1001,2025-01-10,CUST01,Rahul Sharma,Delhi,Mouse,Electronics,2,1000,Credit Card,Success,Yes
+ORD1002,2025-01-11,CUST02,Sneha Verma,Mumbai,Mobile Phone,Electronics,1,32000,UPI,Success,Yes
+ORD1003,2025-01-12,CUST03,Amit Patel,Pune,Dining Table,Furniture,1,18000,Cash,Failed,No
+ORD1003,2025-01-12,CUST03,Amit Patel,Pune,Chair,Furniture,4,14000,Cash,Failed,No
+ORD1004,2025-01-13,CUST04,Neha Singh,Bangalore,Headphones,Electronics,2,5000,Debit Card,Success,Yes
+ORD1005,2025-01-14,CUST05,Karan Mehta,Delhi,Office Chair,Furniture,1,12000,Net Banking,Success,Yes
+ORD1006,2025-01-15,CUST06,Pooja Iyer,Chennai,Smart Watch,Electronics,2,18000,UPI,Success,Yes
