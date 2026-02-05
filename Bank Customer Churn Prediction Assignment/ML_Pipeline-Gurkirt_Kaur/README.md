@@ -23,10 +23,10 @@ This Jupyter notebook presents a comprehensive, production-ready machine learnin
 **Custom Feature Engineering Class:**
 - Drops irrelevant columns (RowNumber, CustomerId, Surname)
 - Creates derived features:
-  - `Balance_per_Product`: Average balance per product held
-  - `Age_per_Tenure`: Customer experience relative to age
-  - `Salary_per_Product`: Salary relationship to product count
-  - `Balance_to_Salary_Ratio`: Financial burden indicator
+  - Balance_per_Product: Average balance per product held
+  - Age_per_Tenure: Customer experience relative to age
+  - Salary_per_Product: Salary relationship to product count
+  - Balance_to_Salary_Ratio: Financial burden indicator
 
 **Preprocessing Transformers:**
 - **Numeric Transformer**: Median imputation + StandardScaler
@@ -61,9 +61,9 @@ Four models are trained and compared:
 ### Part 4: Hyperparameter Tuning & Cross-Validation
 - **5-Fold Cross-Validation**: Reduces bias and detects overfitting
 - **GridSearchCV**: Tests combinations of:
-  - `n_estimators`: [100, 200]
-  - `max_depth`: [3, 5, 7]
-  - `learning_rate`: [0.05, 0.1]
+  - n_estimators: [100, 200]
+  - max_depth: [3, 5, 7]
+  - learning_rate: [0.05, 0.1]
 - **Evaluation Metric**: ROC-AUC for comprehensive performance assessment
 
 ### Part 5: Final Evaluation & Business Insights
@@ -106,15 +106,15 @@ Four models are trained and compared:
 **Number of Features**: 13 (plus derived features)
 
 ### Key Features
-- `CreditScore`: Customer's credit score
-- `Age`: Customer age
-- `Tenure`: Years with the bank
-- `Balance`: Current account balance
-- `NumOfProducts`: Number of products held
-- `IsActiveMember`: Binary activity status
-- `EstimatedSalary`: Estimated annual salary
-- `Geography`: Customer location
-- `Gender`: Customer gender
+- CreditScore: Customer's credit score
+- Age: Customer age
+- Tenure: Years with the bank
+- Balance: Current account balance
+- NumOfProducts: Number of products held
+- IsActiveMember: Binary activity status
+- EstimatedSalary: Estimated annual salary
+- Geography: Customer location
+- Gender: Customer gender
 
 ## Model Performance Summary
 The notebook compares all four models using:
@@ -124,13 +124,11 @@ The notebook compares all four models using:
 - Train vs. test performance for overfitting detection
 
 ## Dependencies
-```
 pandas
 matplotlib
 seaborn
 scikit-learn
 xgboost
-```
 
 ## Key Learnings
 **Proper anti-leakage practices** prevent unrealistic performance estimates  
