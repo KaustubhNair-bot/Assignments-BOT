@@ -132,21 +132,13 @@ scikit-learn
 xgboost
 ```
 
-## How to Use
-1. Ensure data file `Downloads/Churn_Modelling.csv` is in the correct location
-2. Run cells sequentially from top to bottom
-3. All preprocessing and feature engineering occur inside pipelines
-4. GridSearchCV automatically selects optimal hyperparameters
-5. Final evaluation metrics and visualizations demonstrate model performance
-6. Business insights guide retention strategy decisions
-
 ## Key Learnings
-✅ **Proper anti-leakage practices** prevent unrealistic performance estimates  
-✅ **Custom feature engineering** improves model performance and business interpretability  
-✅ **Ensemble methods** (Random Forest, XGBoost) outperform single decision trees  
-✅ **Cross-validation** provides robust performance estimates  
-✅ **Feature importance analysis** enables actionable business insights  
-✅ **Model comparison** helps select the best performer for production deployment  
+**Proper anti-leakage practices** prevent unrealistic performance estimates  
+**Custom feature engineering** improves model performance and business interpretability  
+**Ensemble methods** (Random Forest, XGBoost) outperform single decision trees  
+**Cross-validation** provides robust performance estimates  
+**Feature importance analysis** enables actionable business insights  
+**Model comparison** helps select the best performer for production deployment  
 
 ## Conclusion
 This pipeline demonstrates how to build a production-ready churn prediction model that not only achieves strong predictive performance but also provides clear business interpretability. By combining rigorous machine learning practices with domain understanding, the solution enables the bank to proactively identify and retain high-risk customers through data-driven strategies.
