@@ -1,0 +1,1 @@
+This folder is to submit the vibe coding assignment dated : 6th Feb 2026
