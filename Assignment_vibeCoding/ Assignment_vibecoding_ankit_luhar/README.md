@@ -1,4 +1,4 @@
-# AI Assistant - Production-Ready Streamlit Application
+<img width="3024" height="1964" alt="image" src="https://github.com/user-attachments/assets/4eaaf80e-77a8-416e-9f59-20edda0dacad" /># AI Assistant - Production-Ready Streamlit Application
 
 A professional, production-ready AI assistant web application built with Streamlit and Groq API. Features a clean two-column interface with advanced functionality, security measures, and performance optimizations.
 
@@ -248,6 +248,52 @@ logging.basicConfig(level=logging.DEBUG)
 3. Make your changes
 4. Add tests for new functionality
 5. Submit a pull request
+
+
+
+##Prompt i have used is: 
+
+```
+
+Create a production-ready Streamlit app with this structure:
+
+FILES:
+- app.py (main UI)
+- config.py (constants: DEFAULT_TEMPERATURE=0.7, MAX_TOKENS=2048, DEFAULT_SYSTEM_PROMPT)
+- utils.py (API logic)
+- .env (GROQ_API_KEY=)
+- .env.example (template)
+- requirements.txt (streamlit, groq, python-dotenv)
+- .gitignore (include .env)
+
+APP.PY - Two column layout:
+LEFT COLUMN:
+1. Temperature slider (0.0-2.0, default 0.7)
+2. Model dropdown ["mixtral-8x7b-32768", "llama3-70b-8192", "llama3-8b-8192"]
+3. System Prompt textarea (180px height, default from config)
+4. User Prompt textarea (180px height, required)
+5. Submit button (primary, full width)
+
+RIGHT COLUMN:
+- Display AI response in markdown
+- Show loading spinner during API call
+- Display token usage and response time
+
+UTILS.PY:
+- get_groq_client(): Load API key from .env, return Groq client
+- generate_response(messages, model, temperature): Call Groq API, return response with error handling
+
+FEATURES:
+- Load GROQ_API_KEY from .env (never in UI)
+- Session state for response persistence
+- Comprehensive error handling with user-friendly messages
+- Input validation (check if user prompt is empty)
+- Try-catch blocks for API calls
+- Professional styling with custom CSS
+
+Make it clean, production-ready, and secure. No API key input in UI.
+
+```
 
 ## 📄 License
 
