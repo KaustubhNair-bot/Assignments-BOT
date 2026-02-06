@@ -1,0 +1,11 @@
+# for virtual environment
+.venv
+
+# for environment variables
+.env
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# for python cache
+__pycache__
