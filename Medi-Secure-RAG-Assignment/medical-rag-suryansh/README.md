@@ -120,9 +120,9 @@ uvicorn backend.main:app --reload
 streamlit run app.py
 ```
 
-Login
-Username: doctor1
-Password: pass123
+## Login Details
+#### Username: doctor1
+#### Password: pass123
 
 ---
 
