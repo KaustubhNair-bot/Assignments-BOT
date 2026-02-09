@@ -1,153 +1,198 @@
-# Clinical Case Retrieval System
+# Clinical Case Retrieval System (C²RS)
 
-## Overview
-The Clinical Case Retrieval System is a secure, offline Retrieval-Augmented Generation (RAG) platform designed for hospitals to search unstructured medical transcriptions.  
-Doctors can retrieve past cases with similar symptoms and optionally generate concise medical summaries using a local Small Language Model (SLM) — without any patient data leaving the system.
+## Table of Contents
 
----
+1.  Introduction
+2.  Problem Statement
+3.  Objectives
+4.  Dataset Description
+5.  Folder Structure
+6.  System Architecture
+7.  Technology Stack
+8.  Implementation Workflow
+9.  Security Design
+10. RAG Pipeline Details
+11. Summarization Module
+12. Results & Screens
+13. Limitations
+14. Future Enhancements
+15. Conclusion
 
-## Features
+------------------------------------------------------------------------
 
-- **Semantic Search (RAG)**
-  - Uses `all-mpnet-base-v2` embeddings and FAISS vector index  
-  - Retrieves top-5 clinically relevant transcriptions
+## 1. Introduction
 
-- **Security**
-  - JWT based authentication  
-  - Only authorized doctors can access records  
-  - Fully offline – no external API calls
+Clinical notes in hospitals are mostly unstructured and difficult to
+search.
+This project builds a secure AI system that allows doctors to search
+previous cases using semantic similarity (RAG) and optionally summarize
+them using a local SLM.
 
-- **Doctor-Friendly Interface**
-  - Relevance labels: High / Moderate / Low  
-  - Clean clinical view of transcriptions  
-  - Optional “Generate Medical Summary” button
+------------------------------------------------------------------------
 
-- **Local SLM Summarization**
-  - T5 model generates concise summaries  
-  - On-demand only (doctor controlled)
+## 2. Problem Statement
 
----
+-   Thousands of patient notes exist as free text\
+-   Keyword search is ineffective\
+-   Data cannot leave hospital premises\
+-   Only authorized doctors must access records
 
-## Dataset Used
-- Kaggle: *Medical Transcriptions Dataset*  
-- Column used as knowledge base: **transcription**
+------------------------------------------------------------------------
 
-Duplicates were removed before indexing to avoid biased retrieval.
+## 3. Objectives
 
----
+-   Build offline semantic search over transcriptions
+-   Protect access using JWT authentication
+-   Provide doctor-friendly relevance display
+-   Optional medical summary generation
 
-## Tech Stack Justification
+------------------------------------------------------------------------
 
-### 1. Sentence Transformers + FAISS
-- Efficient semantic similarity search  
-- Works completely offline  
-- Scales to thousands of records  
-- Suitable for clinical text retrieval
+## 4. Dataset Description
 
-### 2. FastAPI + JWT
-- Lightweight secure backend  
-- Token authentication prevents unauthorized access  
-- No patient data exposure
+  Attribute     Value
+  ------------- -------------------------------
+  Source        Kaggle Medical Transcriptions
+  Column Used   transcription
+  Size          \~5k records
+  Type          Unstructured clinical notes
 
-### 3. Streamlit Frontend
-- Rapid medical dashboard  
-- Session-based protected pages  
-- No sidebar to mimic real hospital UI
+------------------------------------------------------------------------
 
-### 4. Local T5 SLM
-- Generates assistive summaries  
-- Does not invent new medical facts  
-- Keeps computation inside hospital network
+## 5. Folder Structure
 
----
+    medical-rag/
+    │
+    ├── app.py                     # Landing & login page
+    ├── pages/
+    │   └── search.py              # Protected search dashboard
+    │
+    ├── backend/
+    │   ├── main.py                # FastAPI endpoints
+    │   ├── auth.py                # JWT authentication
+    │   ├── rag.py                 # FAISS retrieval
+    │   └── summarizer.py          # Local T5 summarizer
+    │
+    ├── embeddings/
+    │   ├── build_index.py         # Create vector index
+    │   ├── medical.index          # FAISS store
+    │   └── texts.txt              # Raw knowledge base
+    │
+    ├── data/
+    │   └── medical.csv            # Dataset
+    │
+    └── requirements.txt
 
-## System Architecture
+------------------------------------------------------------------------
 
-User Query
-↓
-MPNet Embedding
-↓
-FAISS Vector Search
-↓
-Top Similar Transcriptions
-↓
-(Optional) Local T5 Summarizer
+## 6. System Architecture
 
----
+    +--------------------+
+    | Doctor Login UI    |
+    +---------+----------+
+              |
+              v
+    +--------------------+
+    | JWT Authentication |
+    +---------+----------+
+              |
+              v
+    +--------------------+
+    | MPNet Embedding    |
+    +---------+----------+
+              |
+              v
+    +--------------------+
+    | FAISS Vector Store |
+    +---------+----------+
+              |
+              v
+    +--------------------+
+    | Retrieved Cases    |
+    +---------+----------+
+              |
+              v
+    +--------------------+
+    | Optional T5 SLM    |
+    +--------------------+
 
-## What I Learned
+------------------------------------------------------------------------
 
-1. **RAG Workflow**
-   - Building embeddings from real clinical text  
-   - Indexing and semantic retrieval  
-   - Importance of deduplication
+## 7. Technology Stack
 
-2. **Healthcare Constraints**
-   - Data must remain local  
-   - AI should assist, not diagnose  
-   - Explainability is crucial
+  Layer       Tool        Reason
+  ----------- ----------- -----------------
+  Backend     FastAPI     Lightweight API
+  Security    JWT         Token auth
+  Retrieval   FAISS       Fast similarity
+  Embedding   MPNet       Semantic search
+  Frontend    Streamlit   Rapid UI
+  SLM         T5 Small    Offline summary
 
-3. **Streamlit State Handling**
-   - Managing reruns with session state  
-   - Preventing UI resets  
-   - Building protected navigation
+------------------------------------------------------------------------
 
-4. **SLM Limitations**
-   - Lightweight models trade quality for privacy  
-   - Need human-centered wording
+## 8. Implementation Workflow
 
----
+1.  Load transcription column
+2.  Generate MPNet embeddings
+3.  Build FAISS index
+4.  Doctor logs in
+5.  Query encoded
+6.  Similar cases retrieved
+7.  Optional summarization
 
-## How to Run
+------------------------------------------------------------------------
 
-### 1. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+## 9. Security Design
 
-### 2. Build Index (One Time)
-```bash
-python embeddings/build_index.py
-```
+-   No external API usage
+-   JWT based sessions
+-   Local model inference
+-   Protected pages
 
-### 3. Start Backend
-```bash
-uvicorn backend.main:app --reload
-```
+------------------------------------------------------------------------
 
-### 4. Start Frontend
-```bash
-streamlit run app.py
-```
+## 10. RAG Pipeline Details
 
-## Login Details
-#### Username: doctor1
-#### Password: pass123
+-   Dense vector search
+-   Top-5 retrieval
+-   Relevance labels
+-   Evidence display
 
----
+------------------------------------------------------------------------
 
-## Why This Tech Stack?
+## 11. Summarization Module
 
-**MPNet + FAISS**  
-Chosen for semantic similarity instead of keyword search, enabling retrieval based on meaning of symptoms rather than exact words.
+-   On-demand only
+-   T5 text-to-text
+-   No diagnosis generation
 
-**FastAPI + JWT**  
-Provides secure, lightweight authentication so only verified doctors can access records.
+------------------------------------------------------------------------
 
-**Streamlit**  
-Allows rapid creation of clinician-friendly interface without exposing internal APIs.
+## 12. Results
 
-**T5 Small (Local SLM)**  
-Used instead of cloud LLMs to ensure:
-- No data leakage  
-- Offline operation  
-- Assistive summarization only
+-   Accurate semantic matches
+-   Fast response
+-   Secure workflow
 
-## Unique Aspects of This Implementation
+------------------------------------------------------------------------
 
-- Deduplication before indexing to avoid biased retrieval  
-- Doctor-friendly relevance labels instead of raw vector scores  
-- On-demand SLM summarization  
-- Session-safe Streamlit navigation  
-- Fully offline RAG pipeline
+## 13. Limitations
 
+-   Lightweight SLM grammar noise
+-   No entity extraction
+
+------------------------------------------------------------------------
+
+## 14. Future Enhancements
+
+-   Structured summaries
+-   Highlight terms
+-   Role based access
+
+------------------------------------------------------------------------
+
+## 15. Conclusion
+
+C²RS demonstrates privacy-preserving retrieval of medical notes with
+assistive summarization.
