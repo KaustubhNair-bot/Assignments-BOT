@@ -50,12 +50,12 @@ them using a local SLM.
 
 ## 4. Dataset Description
 
-  Attribute     Value
-  ------------- -------------------------------
-  Source        Kaggle Medical Transcriptions
-  Column Used   transcription
-  Size          \~5k records
-  Type          Unstructured clinical notes
+| Attribute   | Value                          |
+|------------|--------------------------------|
+| Source     | Kaggle Medical Transcriptions  |
+| Column Used| transcription                  |
+| Size       | ~5k records                    |
+| Type       | Unstructured clinical notes    |
 
 ------------------------------------------------------------------------
 
@@ -120,14 +120,14 @@ them using a local SLM.
 
 ## 7. Technology Stack
 
-  Layer       Tool        Reason
-  ----------- ----------- -----------------
-  Backend     FastAPI     Lightweight API
-  Security    JWT         Token auth
-  Retrieval   FAISS       Fast similarity
-  Embedding   MPNet       Semantic search
-  Frontend    Streamlit   Rapid UI
-  SLM         T5 Small    Offline summary
+| Layer     | Tool       | Reason             |
+|-----------|------------|--------------------|
+| Backend   | FastAPI    | Lightweight API    |
+| Security  | JWT        | Token auth         |
+| Retrieval | FAISS      | Fast similarity    |
+| Embedding | MPNet      | Semantic search    |
+| Frontend  | Streamlit | Rapid UI           |
+| SLM       | T5 Small   | Offline summary    |
 
 ------------------------------------------------------------------------
 
