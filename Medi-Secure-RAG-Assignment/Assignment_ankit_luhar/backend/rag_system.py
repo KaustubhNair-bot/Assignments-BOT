@@ -19,7 +19,7 @@ class CustomPinecone(LangChainPinecone):
         namespace: Optional[str] = None,
         distance_strategy: Optional[DistanceStrategy] = DistanceStrategy.COSINE,
     ):
-        # Skip the isinstance(index, pinecone.Index) check
+
         self._index = index
         self._embedding = embedding
         self._text_key = text_key
@@ -48,13 +48,13 @@ class RAGSystem:
         self.pc = Pinecone(api_key=settings.PINECONE_API_KEY)
         self.index_name = settings.PINECONE_INDEX_NAME
         
-        # Check if index exists
+
         existing_indexes = [i.name for i in self.pc.list_indexes()]
         if self.index_name not in existing_indexes:
             try:
                 self.pc.create_index(
                     name=self.index_name,
-                    dimension=1024, # Cohere embed-english-v3.0
+                    dimension=1024, 
                     metric="cosine",
                     spec=ServerlessSpec(
                         cloud="aws",
@@ -64,10 +64,10 @@ class RAGSystem:
             except Exception as e:
                 print(f"Error creating index: {e}")
 
-        # Use index() method for v3 client
+
         self.index = self.pc.Index(self.index_name)
         
-        # Use CustomPinecone to verify compatibility
+
         self.vectorstore = CustomPinecone(
             index=self.index, 
             embedding=self.embeddings, 

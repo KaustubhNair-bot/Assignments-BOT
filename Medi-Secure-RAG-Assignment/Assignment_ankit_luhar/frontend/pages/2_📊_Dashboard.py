@@ -8,7 +8,7 @@ if 'access_token' not in st.session_state or not st.session_state.access_token:
 
 st.title("📊 System Dashboard")
 
-# Mock stats for demonstration
+
 col1, col2, col3 = st.columns(3)
 
 with col1:

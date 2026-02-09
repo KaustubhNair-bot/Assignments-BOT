@@ -29,7 +29,7 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     return encoded_jwt
 
 def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(database.get_db if hasattr(database, 'get_db') else lambda: None)):
-     # Allow dependency injection for db if needed, but for now we'll just validate token format
+
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
@@ -44,5 +44,5 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
     except JWTError:
         raise credentials_exception
     
-    # In a real app we'd fetch user from DB. For now, we trust the token if valid.
+
     return token_data
