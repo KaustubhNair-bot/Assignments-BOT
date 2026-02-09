@@ -1,8 +1,7 @@
-# Clinical Case Retrieval System (C²RS)
-# Clinical Case Retrieval System (C²RS)
+# Clinical Case Retrieval System
 
 ## Overview
-The Clinical Case Retrieval System (C²RS) is a secure, offline Retrieval-Augmented Generation (RAG) platform designed for hospitals to search unstructured medical transcriptions.  
+The Clinical Case Retrieval System is a secure, offline Retrieval-Augmented Generation (RAG) platform designed for hospitals to search unstructured medical transcriptions.  
 Doctors can retrieve past cases with similar symptoms and optionally generate concise medical summaries using a local Small Language Model (SLM) — without any patient data leaving the system.
 
 ---
