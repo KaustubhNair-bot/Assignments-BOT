@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-jose[cryptography]
+passlib[argon2]
+argon2-cffi
+pydantic
+pandas
+numpy
+faiss-cpu
+sentence-transformers
+requests
+python-multipart
+streamlit
