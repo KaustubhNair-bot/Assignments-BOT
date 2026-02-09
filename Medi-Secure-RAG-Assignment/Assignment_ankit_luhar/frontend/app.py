@@ -2,8 +2,7 @@ import streamlit as st
 import requests
 import os
 
-# Create pages directory if it doesn't exist to avoid errors
-# os.makedirs("frontend/pages", exist_ok=True) # Already done in init
+
 
 st.set_page_config(
     page_title="Medical RAG System",
@@ -13,7 +12,7 @@ st.set_page_config(
 
 API_URL = "http://localhost:8000"
 
-# Initialize session state
+
 if 'access_token' not in st.session_state:
     st.session_state.access_token = None
 

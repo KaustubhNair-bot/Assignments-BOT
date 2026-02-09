@@ -32,8 +32,6 @@ def get_db():
 
 @app.post("/token", response_model=models.Token)
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
-    # Authenticate user (simplified logic for demo - user needs to be created first or use a hardcoded one)
-    # For this demo, we'll create a user on the fly if it doesn't exist matching "admin"
     user = db.query(database.UserDB).filter(database.UserDB.username == form_data.username).first()
     
     if not user:
@@ -66,8 +64,7 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
 
 @app.get("/users/me/", response_model=models.User)
 async def read_users_me(token: str = Depends(auth.oauth2_scheme), db: Session = Depends(get_db)):
-    # In a full app, we would validate token and fetch user
-    # simplified:
+  
     try:
         payload = auth.jwt.decode(token, auth.settings.SECRET_KEY, algorithms=[auth.settings.ALGORITHM])
         username: str = payload.get("sub")
@@ -86,7 +83,7 @@ async def search_cases(query: models.SearchQuery, current_user: models.User = De
         results.append(models.SearchResult(
             transcription=doc.page_content,
             metadata=doc.metadata,
-            score=0.9 # Placeholder as LangChain generic search might not return score directly in all methods
+            score=0.9 
         ))
     return results
 
@@ -115,7 +112,7 @@ async def upload_case(case: models.CaseUpload, current_user: models.User = Depen
          raise HTTPException(status_code=500, detail="Failed to index document")
     return {"status": "Case uploaded and indexed successfully"}
 
-# Optional: Endpoint to trigger data loading
+
 @app.post("/load-data")
 async def trigger_load_data(current_user: models.User = Depends(read_users_me)):
     if current_user.username != "admin": # Simple check

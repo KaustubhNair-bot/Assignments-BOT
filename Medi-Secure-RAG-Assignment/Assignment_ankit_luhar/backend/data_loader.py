@@ -12,17 +12,17 @@ def load_data(file_path: str = "data/mtsamples.csv"):
     print("Loading data...")
     df = pd.read_csv(file_path)
     
-    # Filter for relevant columns and drop NAs
+    
     if 'transcription' not in df.columns:
         print("Dataset missing 'transcription' column.")
         return
         
     df = df.dropna(subset=['transcription'])
     
-    # Fill NaN values with empty strings to avoid Pinecone metadata errors
+
     df = df.fillna("")
     
-    # Use a subset for demo purposes to avoid hitting API limits quickly
+
     df = df.head(100) 
 
     loader = DataFrameLoader(df, page_content_column="transcription")
