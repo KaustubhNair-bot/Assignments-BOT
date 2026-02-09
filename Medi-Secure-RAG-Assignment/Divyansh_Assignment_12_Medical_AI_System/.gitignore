@@ -1,0 +1,20 @@
+# Ignore Virtual Environments
+.venv/
+venv/
+env/
+bin/
+lib/
+include/
+
+# Ignore Data and Large AI Brains
+data/vector_dbs/
+*.bin
+*.sqlite3
+*.pickle
+
+# Ignore Secrets
+.env
+
+# Ignore System junk
+.DS_Store
+__pycache__/

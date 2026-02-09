@@ -1,0 +1,7 @@
+streamlit
+pandas
+chromadb
+sentence-transformers
+ollama
+PyJWT
+datetime
