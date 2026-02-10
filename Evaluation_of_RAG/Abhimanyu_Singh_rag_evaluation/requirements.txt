@@ -1,0 +1,28 @@
+# --- Backend & API Framework ---
+fastapi
+uvicorn
+python-multipart
+requests
+python-dotenv
+
+# --- Security & Authentication ---
+# [Required by auth.py and users.py]
+python-jose[cryptography]
+passlib[argon2]
+
+# --- Vector Database & Embeddings ---
+# [Required by rag.py and ingest.py]
+chromadb
+sentence-transformers
+langchain-huggingface
+langchain-community
+langchain-text-splitters
+
+# --- Data Processing ---
+# [Required by ingest.py]
+pandas
+numpy
+
+# --- Frontend ---
+# [Required by app.py]
+streamlit

@@ -1,0 +1,117 @@
+[
+    {
+        "id": 1,
+        "category": "Cardiology",
+        "query": "Patient presenting with chest pain radiating to the left arm with shortness of breath and diaphoresis",
+        "base_llm": {
+            "answer": " The symptoms you've described - chest pain radiating to the left arm, shortness of breath, and excessive sweating (diaphoresis) - are commonly associated with cardiovascular conditions, specifically a potential acute coronary syndrome such as unstable angina or acute myocardial infarction (heart attack). However, it's important to note that these symptoms can also be related to other health issues.\n\nGiven the serious nature of these symptoms, it's crucial for this patient to seek immediate medical attention. Upon arrival at a healthcare facility, they would likely undergo an initial evaluation, including an electrocardiogram (ECG), blood tests, and potentially further diagnostic tests like echocardiography or cardiac stress testing.\n\nTreatment options may include pain management medications, oxygen therapy for shortness of breath, and if necessary, emergency procedures such as coronary angioplasty or stenting to restore proper blood flow to the heart.\n\nHowever, this is only a general guideline based on the symptoms you've provided. The actual diagnosis and treatment plan should be determined by a qualified healthcare professional after conducting a thorough evaluation of the patient.",
+            "latency_ms": 11373,
+            "scores": {
+                "completeness": 8,
+                "specificity": 6,
+                "groundedness": 9
+            }
+        },
+        "rag_system": {
+            "answer": " Based on the provided records, the initial patient presented with chest pain described as a pressure-type dull ache and discomfort in the precordial region without any diaphoresis or shortness of breath. However, in a subsequent record, there is a different patient who is diabetic with a history of coronary artery disease. This patient presents with chest pain radiating to the left arm, shortness of breath, and diaphoresis. Therefore, the patient presenting with chest pain radiating to the left arm, shortness of breath, and diaphoresis can be referred to as the diabetic patient with a history of coronary artery disease.",
+            "latency_ms": 10380,
+            "scores": {
+                "completeness": 6,
+                "specificity": 9,
+                "groundedness": 10
+            }
+        }
+    },
+    {
+        "id": 2,
+        "category": "Endocrinology",
+        "query": "Management of type 2 diabetes with complications including diabetic neuropathy and retinopathy",
+        "base_llm": {
+            "answer": " Managing Type 2 Diabetes with its associated complications such as diabetic neuropathy and retinopathy requires a comprehensive approach that involves both medication and lifestyle modifications. Here's an outline of the management strategies:\n\n1. **Medication**: The choice of medication depends on various factors, including the patient's blood glucose levels, HbA1c (average blood sugar level over 2-3 months), other medical conditions, and the presence or risk of complications. Common medications used in Type 2 diabetes management include:\n   - Oral antidiabetic drugs (OADs): Metformin, Sulfonylureas, DPP-4 inhibitors, GLP-1 receptor agonists, and sodium-glucose cotransporter 2 (SGLT2) inhibitors.\n   - Insulin therapy: When oral medications are not sufficient to maintain glucose control.\n   - Additional medications may be needed for specific complications like diabetic neuropathy pain management or treatment of diabetic retinopathy.\n\n2. **Lifestyle modifications**: Making lifestyle changes is essential in managing Type 2 diabetes and preventing further complications. These changes include:\n   - Healthy eating habits: Consuming a balanced diet with emphasis on low-fat, high-fiber foods, fruits, vegetables, lean proteins, and limited added sugars and saturated fats.\n   - Regular physical activity: Aiming for at least 150 minutes of moderate aerobic exercise or 75 minutes of vigorous aerobic exercise per week, along with resistance training on two days each week.\n   - Maintaining a healthy weight: Losing even a small amount of excess weight can improve diabetes control and reduce the risk of complications.\n   - Smoking cessation: If applicable, quitting smoking significantly improves overall health and reduces the risk of diabetic complications.\n   - Regular monitoring: Regular self-monitoring of blood glucose levels helps patients and their healthcare providers to make informed decisions about treatment adjustments.\n\n3. **Regular medical check-ups**: Frequent follow-up visits with the healthcare provider are crucial for monitoring diabetes control, assessing complications, and adjusting treatment plans as needed.\n   - Eye examinations: Annual dilated eye exams to screen for diabetic retinopathy and maintain good vision health.\n   - Nerve function testing (neuropathy screening): Routine nerve function tests to detect early signs of neuropathy and prevent complications.\n   - Other screenings: Regular check-ups for other diabetes-related complications, such as kidney disease, cardiovascular disease, and foot care, should also be part of the management plan.",
+            "latency_ms": 26567,
+            "scores": {
+                "completeness": 8,
+                "specificity": 9,
+                "groundedness": 9
+            }
+        },
+        "rag_system": {
+            "answer": " Based on the provided records, the patient ABC has been diagnosed with type 2 diabetes and is being referred for evaluation of diabetic retinopathy. The current examination shows normal applanation pressures (17 mmHg bilaterally), full visual fields, no relative afferent pupillary defect, and a vision of 20/40 OD pinholing to 20/20 in the right eye and 20/20 uncorrected in the left eye.\n\nHowever, there is no direct mention of diabetic neuropathy in the provided context. To manage type 2 diabetes with complications including diabetic retinopathy and possible diabetic neuropathy, a comprehensive treatment plan would typically involve:\n\n1. Glycemic control through diet, exercise, and potentially medication (oral agents or insulin).\n2. Regular eye examinations to monitor for signs of diabetic retinopathy and appropriate management if detected.\n3. Management of associated conditions such as hypertension.\n4. Neurological evaluation and management if there are symptoms suggestive of diabetic neuropathy, which may include pain management, physical therapy for walking issues, and possibly specific medications for nerve-related problems.",
+            "latency_ms": 15314,
+            "scores": {
+                "completeness": 8,
+                "specificity": 9,
+                "groundedness": 6
+            }
+        }
+    },
+    {
+        "id": 3,
+        "category": "Orthopedic",
+        "query": "Surgical procedure for total knee replacement in a patient with severe osteoarthritis",
+        "base_llm": {
+            "answer": " A total knee replacement, also known as total knee arthroplasty, is a surgical procedure that involves replacing the damaged parts of the knee joint with artificial parts. This is typically performed on patients who have severe osteoarthritis or other conditions causing significant pain and impaired function in the knee.\n\nThe process can be broken down into several stages:\n\n1. **Pre-operative preparation**: This includes a thorough physical examination, diagnostic imaging, and blood tests to ensure the patient is fit for surgery. The surgeon will also discuss the procedure with the patient, explaining the risks, benefits, and what to expect during recovery.\n\n2. **Anesthesia**: The patient is administered anesthesia to ensure they are comfortable and pain-free during the operation. This can be general anesthesia (the patient is unconscious) or regional anesthesia (numbness only in the affected area).\n\n3. **Incision**: The surgeon makes an incision over the knee joint. The exact location of the incision may vary depending on the surgical approach used.\n\n4. **Exposure**: The muscles and ligaments around the knee are moved aside to expose the joint itself.\n\n5. **Resection**: The damaged parts of the femur (thigh bone) and tibia (shin bone) are removed using specialized cutting guides. This allows for a precise fit for the replacement components.\n\n6. **Implantation**: The artificial components, which typically consist of metal alloy for the femoral and tibial parts, and plastic for the kneecap component, are inserted into place. These components replicate the natural shape and movement of the knee joint.\n\n7. **Cementing**: In most cases, these components are cemented into position. However, in some cases, they may be press-fitted without cement.\n\n8. **Closure**: The muscles and ligaments are moved back into place, and the incision is closed with sutures or staples.\n\n9. **Recovery**: After surgery, the patient will typically spend a few days in the hospital for monitoring and physical therapy to help regain knee movement and strength. Recovery continues at home with ongoing physical therapy and restrictions on weight-bearing activities for several weeks.\n\nIt's important to note that each patient's case is unique, and the specific details of the surgery may vary depending on factors such as the patient's overall health, the severity of their osteoarthritis, and the surgeon's preferred surgical techniques. Always consult with a healthcare professional for advice tailored to your individual situation.",
+            "latency_ms": 25932,
+            "scores": {
+                "completeness": 9,
+                "specificity": 8,
+                "groundedness": 9
+            }
+        },
+        "rag_system": {
+            "answer": " The surgical procedure performed for the given case is a Left unicompartmental knee replacement, specifically using Biomet size medium femoral component size B tibial tray and a 3 mm polyethylene component. This was done due to severe osteoarthritis in the left medial compartment of the knee. However, for total knee replacement, if that's what your question refers to, it seems the procedure performed in this specific case is actually a unicompartmental knee replacement and not a total one.",
+            "latency_ms": 8117,
+            "scores": {
+                "completeness": 8,
+                "specificity": 9,
+                "groundedness": 10
+            }
+        }
+    },
+    {
+        "id": 4,
+        "category": "Pediatrics",
+        "query": "Pediatric patient with recurrent upper respiratory infections and bilateral otitis media",
+        "base_llm": {
+            "answer": " Based on the symptoms you've provided, it appears that we are dealing with a pediatric patient who is experiencing recurrent upper respiratory infections (URIs) and bilateral otitis media, which is inflammation or infection of both middle ears.\n\nRecurrent URIs can be caused by various factors such as viral infections, allergies, or weakened immune systems. In children, it's common for them to experience multiple URIs due to their developing immune system and frequent exposure to germs at school or daycare.\n\nBilateral otitis media often occurs as a complication of upper respiratory infections because the Eustachian tubes that connect the middle ear to the nasopharynx can become blocked during a cold or other URIs, leading to fluid accumulation and potential infection.\n\nIt is essential to have the child evaluated by a pediatrician or an ear, nose, and throat (ENT) specialist. A thorough examination, including tympanometry and possibly a hearing test, will help determine the extent of the ear infections and rule out any other underlying conditions that might be causing the recurrent URIs.\n\nTreatment options may include antibiotics for bacterial infections, decongestants, antihistamines, or anti-inflammatory ear drops to reduce inflammation and alleviate pain. In some cases, surgical procedures such as myringotomy with tube insertion (tympanostomy tubes) may be necessary to help drain the fluid from the middle ears and prevent recurrent infections.\n\nIt's also crucial to address any potential contributing factors such as allergies or environmental exposures that could predispose the child to recurrent URIs. This might involve allergy testing, immunizations, or lifestyle modifications.\n\nLastly, it's essential to educate the parents or caregivers on proper hygiene practices and prevention methods to minimize the spread of germs and reduce the risk of future infections.",
+            "latency_ms": 20103,
+            "scores": {
+                "completeness": 8,
+                "specificity": 9,
+                "groundedness": 9
+            }
+        },
+        "rag_system": {
+            "answer": " Yes, the presented clinical case describes a pediatric patient (3-year-old female) who has been experiencing chronic ear infections bilaterally. Associated signs and symptoms include cough, fever, irritability, speech and language delay, and throbbing pain in the ears. The duration of the symptoms is 12 rounds of antibiotics for otitis media. No known medical allergies or current medications are mentioned. The patient's past medical history and previous surgeries are unremarkable. Social history indicates that the child is in a large family environment.",
+            "latency_ms": 8596,
+            "scores": {
+                "completeness": 7,
+                "specificity": 8,
+                "groundedness": 6
+            }
+        }
+    },
+    {
+        "id": 5,
+        "category": "Gastroenterology",
+        "query": "Colonoscopy findings in a patient with chronic abdominal pain and suspected inflammatory bowel disease",
+        "base_llm": {
+            "answer": " In the context of a patient presenting with chronic abdominal pain and a suspicion of inflammatory bowel disease (IBD), a colonoscopy can provide valuable insights.\n\n1. Ulcerative Colitis: This is a type of IBD characterized by continuous inflammation in the large intestine (colon) and rectum, starting from the anus. On colonoscopy, you may observe continuous redness, swelling, and ulcers, particularly affecting the rectum and sigmoid colon. The inflammation may extend proximally along the colon, depending on the extent of disease involvement.\n\n2. Crohn's Disease: Another type of IBD, Crohn's disease can affect any part of the gastrointestinal tract from mouth to anus. However, it often involves the terminal ileum and the colon in a segmental, patchy fashion. On colonoscopy, you may find areas of inflammation with deep ulcers (aphthous or cobblestone appearance), skip lesions, strictures (narrowing of the lumen) and fistulas (abnormal connections between organs).\n\n3. Indeterminate Colitis: This is a diagnosis when the features seen on colonoscopy do not clearly fit with ulcerative colitis or Crohn's disease. It often requires further testing to distinguish between these two conditions.\n\n4. Normal findings: Sometimes, colonoscopies in patients with chronic abdominal pain and suspected IBD may appear normal, even though the patient has active inflammation at a site that was not reached during the procedure or the inflammation is confined to the small intestine (which can't be visualized during a colonoscopy).\n\n5. Other findings: Apart from IBD, other conditions such as diverticular disease, colorectal polyps, colon cancer, and infectious colitis could also present with similar symptoms. Therefore, it is crucial to carefully interpret the colonoscopy findings in conjunction with the patient's medical history, laboratory results, and physical examination.\n\nThe management of IBD often involves medications to control inflammation, nutrition support if necessary, and potentially surgery for severe cases or complications. In light of the above information, it is important to consult a gastroenterologist for proper diagnosis and treatment.",
+            "latency_ms": 22777,
+            "scores": {
+                "completeness": 9,
+                "specificity": 8,
+                "groundedness": 9
+            }
+        },
+        "rag_system": {
+            "answer": " Based on the provided records, the colonoscopy performed on the patient did not reveal any evidence of inflammatory bowel disease, polyp, or other neoplasm. The findings are consistent with Irritable Bowel Syndrome (IBS). However, it's important to note that this patient presented with chronic abdominal pain. While IBS can cause abdominal discomfort and changes in bowel movements, further investigation may be needed to fully understand the cause of the patient's chronic abdominal pain. I don't know based on these records if any additional tests or evaluations have been conducted to address this symptom.",
+            "latency_ms": 19470,
+            "scores": {
+                "completeness": 7,
+                "specificity": 8,
+                "groundedness": 9
+            }
+        }
+    }
+]
