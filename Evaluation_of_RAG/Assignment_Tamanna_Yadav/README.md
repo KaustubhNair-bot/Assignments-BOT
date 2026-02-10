@@ -10,10 +10,10 @@
 
 **Goal:** Prove whether a RAG system actually provides better results than a standard LLM.
 
-| Task | Description | Status |
-|------|-------------|--------|
-| **Task 1** | Improve RAG pipeline with best practices (chunking, embeddings, similarity) | ✅ Complete |
-| **Task 2** | Evaluate RAG vs Base LLM on 5 queries with metrics | ✅ Complete |
+| Task | Description |
+|------|-------------|
+| **Task 1** | Improve RAG pipeline with best practices (chunking, embeddings, similarity) | 
+| **Task 2** | Evaluate RAG vs Base LLM on 5 queries with metrics | 
 
 ---
 
@@ -23,11 +23,11 @@
 
 | Metric | RAG System | Base LLM | Winner |
 |--------|:----------:|:--------:|:------:|
-| **Answer Relevance** | 0.991 | 0.976 | 🏆 RAG |
-| **Faithfulness** | 0.404 | 0.000 | 🏆 RAG |
-| **Context Precision** | 0.720 | 0.000 | 🏆 RAG |
+| **Answer Relevance** | 0.991 | 0.976 | RAG |
+| **Faithfulness** | 0.404 | 0.000 | RAG |
+| **Context Precision** | 0.720 | 0.000 | RAG |
 | **Answer Completeness** | 0.960 | 1.000 | Base LLM |
-| **Hallucination Risk** | 0.179 | 0.300 | 🏆 RAG |
+| **Hallucination Risk** | 0.179 | 0.300 | RAG |
 
 ### Key Finding
 
@@ -213,7 +213,7 @@ streamlit run app.py
 4. **RAG Evaluation**
    - Faithfulness measures grounding in context
    - Hallucination risk is critical for medical AI
-   - RAG reduces fabrication by 40%
+   - RAG reduces fabrication by 36%
 
 ### Key Insight
 
@@ -227,13 +227,11 @@ streamlit run app.py
 
 | Advantage | Evidence |
 |-----------|----------|
-| **Lower Hallucination** | 40% reduction (0.179 vs 0.300) |
-| **Grounded Answers** | 0.404 faithfulness score |
-| **Relevant Retrieval** | 72% context precision |
-| **Better Relevance** | 0.991 vs 0.976 |
+| **Lower Hallucination** | 36% reduction (0.191 vs 0.300) |
+| **Grounded Answers** | 0.362 faithfulness score |
+| **Better Relevance** | 0.986 vs 0.976 |
+| **Retriever Quality** | 0.800 MRR (first relevant doc in top 2) |
+| **Text Quality** | ROUGE-L: 0.179 |
 
-The only metric where Base LLM slightly wins is **Answer Completeness** (1.0 vs 0.96), because it generates more generic content. However, for medical applications, **accuracy and grounding matter more than verbosity**.
+For medical applications, **accuracy and grounding matter more than verbosity**.
 
----
-
-*Evaluation completed with 5 queries across Cardiology, Pulmonology, Gastroenterology, Neurology, and Orthopedics.*
