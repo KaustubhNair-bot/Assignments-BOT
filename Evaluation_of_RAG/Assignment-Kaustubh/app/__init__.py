@@ -1,0 +1,3 @@
+"""
+MediCure RAG Application Package
+"""

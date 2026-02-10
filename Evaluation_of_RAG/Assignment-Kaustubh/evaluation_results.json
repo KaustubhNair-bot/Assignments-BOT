@@ -1,0 +1,404 @@
+[
+  {
+    "query_id": 1,
+    "query": "Patient presenting with chest pain radiating to the left arm with shortness of breath and diaphoresis",
+    "category": "Cardiology / Emergency",
+    "expected_topics": [
+      "myocardial infarction",
+      "cardiac catheterization",
+      "ECG",
+      "troponin",
+      "chest pain"
+    ],
+    "rag": {
+      "answer": "The patient presenting with chest pain radiating to the left arm, shortness of breath, and diaphoresis is a classic symptomatology of an acute coronary syndrome, specifically myocardial infarction (MI). \n\nCase 2 and Case 4 describe a 40-year-old white male with a history of coronary artery disease, diabetes mellitus type II, and hypertension, presenting with chest pain radiating to the neck and left arm, shortness of breath, and diaphoresis. The patient's symptoms are similar to the query, with the pain being sharp and heavy, worsening with walking, and partially relieved with rest and nitroglycerin. The patient's past medical history, social history, and family history of coronary artery disease are also notable. \n\nIn contrast, Case 1 describes a 60-year-old female with multiple problems, including chest pain at night, which is mild-to-moderate and resolves within 15 minutes of getting up. Her symptoms do not exactly match the query, as she denies any fast heartbeats, irregular heartbeats, or radiation of pain to the left arm.\n\nCase 3 describes a 53-year-old white male with jaw pain, but no chest pain or shortness of breath. He has a history of hypercholesterolemia and hyperthyroidism, and his symptoms do not match the query.\n\nCase 5 describes a 42-year-old Caucasian male with right-sided upper chest pain, but no radiation to the left arm, shortness of breath, or diaphoresis. His symptoms are not consistent with the query.\n\nBased on the provided cases, the most relevant case to the query is Case 2 (and Case 4, which appears to be a duplicate of Case 2). The patient in Case 2 presents with symptoms consistent with an acute coronary syndrome, specifically myocardial infarction. The patient's history of coronary artery disease, diabetes mellitus type II, and hypertension, along with the symptoms of chest pain radiating to the neck and left arm, shortness of breath, and diaphoresis, make this case the most relevant to the query.\n\nKey medical findings in Case 2 include:\n\n* Chest pain radiating to the neck and left arm\n* Shortness of breath and diaphoresis\n* History of coronary artery disease, diabetes mellitus type II, and hypertension\n* Partial relief of pain with nitroglycerin\n* Family history of coronary artery disease\n\nThese findings suggest that the patient in the query may be experiencing an acute coronary syndrome, and further evaluation and management should be guided by the principles of acute coronary syndrome management, including immediate medical attention, electrocardiogram (ECG) interpretation, and potential cardiac catheterization.",
+      "retrieval_time_ms": 71.6,
+      "llm_time_ms": 2318.19,
+      "total_time_ms": 2389.79,
+      "tokens_used": {
+        "prompt_tokens": 2767,
+        "completion_tokens": 560,
+        "total_tokens": 3327
+      },
+      "num_contexts": 5,
+      "keyword_overlap": 0.8,
+      "top_case_scores": [
+        0.5882,
+        0.5854,
+        0.5825
+      ]
+    },
+    "base_llm": {
+      "answer": "The patient's symptoms are suggestive of an acute coronary syndrome (ACS), specifically a myocardial infarction (MI), commonly known as a heart attack. The combination of chest pain radiating to the left arm, shortness of breath, and diaphoresis (excessive sweating) are classic signs of cardiac ischemia.\n\n**Differential Diagnosis:**\n\n1. **Myocardial Infarction (MI)**: The most likely diagnosis, given the patient's symptoms. MI occurs when the blood flow to the heart is blocked, causing damage to the heart muscle.\n2. **Angina Pectoris**: A condition characterized by chest pain or discomfort due to transient myocardial ischemia, which may not necessarily lead to permanent damage.\n3. **Pulmonary Embolism**: A blockage of an artery in the lungs, which can cause chest pain, shortness of breath, and diaphoresis.\n4. **Aortic Dissection**: A tear in the inner layer of the aorta, which can cause severe chest pain radiating to the back or arms.\n5. **Pericarditis**: Inflammation of the pericardium, the sac surrounding the heart, which can cause chest pain and shortness of breath.\n\n**Initial Evaluation:**\n\n1. **Electrocardiogram (ECG)**: To assess for signs of cardiac ischemia, such as ST-segment elevation or depression, Q-waves, or T-wave inversion.\n2. **Troponin levels**: To detect cardiac damage and diagnose MI.\n3. **Chest X-ray**: To evaluate for signs of pulmonary edema or other pulmonary conditions.\n4. **Blood tests**: To assess for cardiac biomarkers, such as creatine kinase (CK) and myoglobin.\n5. **Vital signs**: To monitor blood pressure, heart rate, respiratory rate, and oxygen saturation.\n\n**Management:**\n\n1. **Oxygen therapy**: To increase oxygen delivery to the heart and other tissues.\n2. **Aspirin**: To reduce platelet aggregation and prevent further clotting.\n3. **Nitrates**: To dilate blood vessels and reduce cardiac workload.\n4. **Beta blockers**: To reduce heart rate and blood pressure, decreasing cardiac oxygen demand.\n5. **Morphine**: To alleviate chest pain and anxiety.\n6. **Cardiac catheterization**: To evaluate coronary artery patency and perform percutaneous coronary intervention (PCI) if necessary.\n7. **Thrombolytic therapy**: To dissolve clots in the coronary arteries, if PCI is not available.\n\n**Urgent Considerations:**\n\n1. **Cardiac arrest**: To be prepared for potential cardiac arrest, with a defibrillator and emergency medications readily available.\n2. **Hemodynamic instability**: To monitor for signs of shock, such as hypotension, tachycardia, and decreased urine output.\n3. **Respiratory failure**: To assess for signs of respiratory distress, such as hypoxia, hypercapnia, or respiratory acidosis.\n\nThe patient should be promptly evaluated and managed in a hospital setting, with a multidisciplinary team of healthcare professionals, including cardiologists, emergency medicine physicians, and nurses.",
+      "llm_time_ms": 1830.43,
+      "tokens_used": {
+        "prompt_tokens": 91,
+        "completion_tokens": 658,
+        "total_tokens": 749
+      },
+      "keyword_overlap": 1.0
+    },
+    "llm_evaluation": {
+      "context_relevance": {
+        "score": 8,
+        "justification": "The retrieved cases are mostly relevant to the query, with Case 2 and Case 4 being highly relevant, but some cases like Case 3 and Case 5 are less relevant."
+      },
+      "rag_groundedness": {
+        "score": 9,
+        "justification": "The RAG answer is well-grounded in the retrieved cases, citing specific cases like Case 2 and Case 4, and using their details to support its reasoning."
+      },
+      "rag_completeness": {
+        "score": 8,
+        "justification": "The RAG answer is fairly complete, covering the main points of the query and providing some relevant medical details, but could be more detailed in some areas."
+      },
+      "rag_specificity": {
+        "score": 8,
+        "justification": "The RAG answer contains some specific medical details from real cases, such as the patient's symptoms and medical history, but could benefit from more specific information."
+      },
+      "base_completeness": {
+        "score": 9,
+        "justification": "The base LLM answer is very complete, covering a wide range of relevant medical topics, including differential diagnosis, initial evaluation, and management."
+      },
+      "base_specificity": {
+        "score": 6,
+        "justification": "The base LLM answer is somewhat generic, lacking specific details from real cases, but provides a good overview of the general medical concepts related to the query."
+      },
+      "base_accuracy_risk": {
+        "score": 7,
+        "justification": "The base LLM answer has a moderate risk of hallucination or inaccuracy, as it provides general information without citing specific cases or evidence."
+      },
+      "overall_rag_score": {
+        "score": 8,
+        "justification": "The RAG answer is of high quality, providing a good balance of relevance, groundedness, completeness, and specificity."
+      },
+      "overall_base_score": {
+        "score": 7,
+        "justification": "The base LLM answer is of good quality, providing a complete and general overview of the medical concepts, but lacks specificity and has a moderate risk of inaccuracy."
+      },
+      "winner": "RAG",
+      "reasoning": "The RAG answer is preferred due to its groundedness in real cases, specificity, and lower risk of hallucination or inaccuracy, despite being slightly less complete than the base LLM answer."
+    }
+  },
+  {
+    "query_id": 2,
+    "query": "Management of type 2 diabetes with complications including diabetic neuropathy and retinopathy",
+    "category": "Endocrinology",
+    "expected_topics": [
+      "diabetes",
+      "insulin",
+      "HbA1c",
+      "neuropathy",
+      "retinopathy",
+      "blood glucose"
+    ],
+    "rag": {
+      "answer": "The management of type 2 diabetes with complications including diabetic neuropathy and retinopathy is a complex issue that requires a comprehensive approach. Based on the provided cases, there is limited information on type 2 diabetes management, as most cases focus on type 1 diabetes or other conditions. However, some relevant information can be gleaned from the cases.\n\nDiabetic retinopathy is mentioned in Case 1 and Case 2, which are identical, and Case 3 and Case 5, which are also similar. In Case 1 and Case 2, the patient does not show any evidence of diabetic retinopathy at the time of examination, and it is recommended that the patient have their eyes dilated once a year for follow-up (Case 1, Case 2). In contrast, Case 3 and Case 5 mention diabetic retinopathy as one of the patient's problems, but do not provide specific information on its management.\n\nDiabetic neuropathy is mentioned in Case 3 and Case 5, where the patient has peripheral neuropathy manifested by insensate feet (Case 3, Case 5). However, there is no specific information on the management of diabetic neuropathy in these cases.\n\nCase 4 provides some information on diabetic foot care, which is relevant to the management of diabetic neuropathy. The case describes an 83-year-old diabetic female who presents for diabetic foot care, and the examination reveals thick and opaque toenails, intact vibratory sensation, and no hair growth on her toes, feet, or lower legs (Case 4).\n\nIn terms of overall diabetes management, Case 3 and Case 5 provide some information on the patient's medication regimen, which includes NovoLog insulin via insulin pump, as well as other medications for various conditions such as hypertension, dyslipidemia, and osteoporosis (Case 3, Case 5).\n\nIn conclusion, while the provided cases do not offer a comprehensive approach to the management of type 2 diabetes with complications including diabetic neuropathy and retinopathy, they do provide some relevant information on the diagnosis and management of these conditions. Specifically, regular eye exams are recommended for patients with diabetes to monitor for diabetic retinopathy (Case 1, Case 2), and diabetic foot care is important for patients with diabetic neuropathy (Case 4). Additionally, a comprehensive medication regimen that includes insulin and other medications may be necessary to manage diabetes and its complications (Case 3, Case 5). However, more information would be needed to provide a complete answer to the query.",
+      "retrieval_time_ms": 59.43,
+      "llm_time_ms": 2178.67,
+      "total_time_ms": 2238.1,
+      "tokens_used": {
+        "prompt_tokens": 2059,
+        "completion_tokens": 520,
+        "total_tokens": 2579
+      },
+      "num_contexts": 5,
+      "keyword_overlap": 0.67,
+      "top_case_scores": [
+        0.5338,
+        0.5288,
+        0.4895
+      ]
+    },
+    "base_llm": {
+      "answer": "The management of type 2 diabetes with complications such as diabetic neuropathy and retinopathy requires a comprehensive and multidisciplinary approach. Here's a detailed overview of the management strategies:\n\n**General Management of Type 2 Diabetes:**\n\n1. **Glycemic Control:** The primary goal is to achieve and maintain optimal blood glucose levels, typically defined as:\n\t* Fasting plasma glucose (FPG) < 130 mg/dL\n\t* Postprandial glucose (PPG) < 180 mg/dL\n\t* Hemoglobin A1c (HbA1c) < 7%\n2. **Lifestyle Modifications:**\n\t* Healthy diet: Focus on whole, unprocessed foods, and a balanced carbohydrate intake\n\t* Regular physical activity: Aim for at least 150 minutes of moderate-intensity aerobic exercise, or 75 minutes of vigorous-intensity aerobic exercise, or a combination of both, per week\n\t* Weight management: Aim for a body mass index (BMI) between 18.5 and 24.9\n3. **Pharmacological Therapy:**\n\t* Metformin is the first-line medication for type 2 diabetes, unless contraindicated\n\t* Other medications, such as sulfonylureas, thiazolidinediones, dipeptidyl peptidase-4 (DPP-4) inhibitors, sodium-glucose cotransporter 2 (SGLT2) inhibitors, and glucagon-like peptide-1 (GLP-1) receptor agonists, may be added or substituted based on individual patient needs and response\n\n**Management of Diabetic Neuropathy:**\n\n1. **Pain Management:**\n\t* Over-the-counter pain relievers, such as acetaminophen or ibuprofen, may be used for mild pain\n\t* Prescription medications, such as pregabalin, gabapentin, or duloxetine, may be used for moderate to severe pain\n2. **Symptomatic Treatment:**\n\t* Topical creams or ointments, such as capsaicin or lidocaine, may be used to relieve pain and discomfort\n\t* Transcutaneous electrical nerve stimulation (TENS) or physical therapy may be beneficial for some patients\n3. **Foot Care:**\n\t* Regular foot exams and proper foot care are essential to prevent ulcers and infections\n\t* Patients should be educated on proper foot hygiene, nail care, and footwear selection\n4. **Autonomic Neuropathy:**\n\t* Management of orthostatic hypotension, gastroparesis, and genitourinary symptoms may require additional medications and lifestyle modifications\n\n**Management of Diabetic Retinopathy:**\n\n1. **Screening and Monitoring:**\n\t* Regular comprehensive eye exams, including dilated fundus exams and optical coherence tomography (OCT), to monitor disease progression\n2. **Laser Photocoagulation:**\n\t* Laser treatment may be used to reduce edema, prevent vision loss, and treat proliferative diabetic retinopathy\n3. **Intravitreal Injections:**\n\t* Anti-vascular endothelial growth factor (VEGF) medications, such as ranibizumab or bevacizumab, may be used to treat diabetic macular edema\n4. **Vitrectomy:**\n\t* Surgical removal of the vitreous gel may be necessary in cases of advanced diabetic retinopathy, such as vitreomacular traction or retinal detachment\n\n**Additional Considerations:**\n\n1. **Hypertension and Lipid Management:**\n\t* Blood pressure and lipid profiles should be regularly monitored and managed to reduce cardiovascular risk\n2. **Nephropathy:**\n\t* Regular monitoring of kidney function, including serum creatinine and urine albumin-to-creatinine ratio, is essential to detect and manage diabetic nephropathy\n3. **Cardiovascular Risk Reduction:**\n\t* Aspirin therapy, statins, and other cardiovascular medications may be prescribed to reduce cardiovascular risk\n4. **Patient Education and Support:**\n\t* Patients should be educated on diabetes self-management, including glucose monitoring, medication adherence, and lifestyle modifications\n\t* Ongoing support and counseling may be necessary to address psychological and social factors that impact diabetes management\n\nBy adopting a comprehensive and multidisciplinary approach, healthcare providers can effectively manage type 2 diabetes with complications, such as diabetic neuropathy and retinopathy, and improve patient outcomes.",
+      "llm_time_ms": 2200.46,
+      "tokens_used": {
+        "prompt_tokens": 86,
+        "completion_tokens": 928,
+        "total_tokens": 1014
+      },
+      "keyword_overlap": 0.83
+    },
+    "llm_evaluation": {
+      "context_relevance": {
+        "score": 6,
+        "justification": "The retrieved cases are somewhat relevant to the query, but most of them focus on type 1 diabetes or other conditions, rather than type 2 diabetes with complications."
+      },
+      "rag_groundedness": {
+        "score": 8,
+        "justification": "The RAG answer is grounded in the retrieved cases, citing specific cases and providing some relevant information on diabetic retinopathy and neuropathy."
+      },
+      "rag_completeness": {
+        "score": 4,
+        "justification": "The RAG answer is not very complete, as it lacks detailed information on the management of type 2 diabetes with complications, and relies heavily on general statements."
+      },
+      "rag_specificity": {
+        "score": 6,
+        "justification": "The RAG answer contains some specific medical details from real cases, but it is limited by the lack of relevant information in the retrieved cases."
+      },
+      "base_completeness": {
+        "score": 9,
+        "justification": "The base LLM answer is very complete, providing a detailed overview of the management of type 2 diabetes with complications, including diabetic neuropathy and retinopathy."
+      },
+      "base_specificity": {
+        "score": 8,
+        "justification": "The base LLM answer contains specific details on the management of type 2 diabetes, but it is not based on real cases and may lack the nuance of actual patient data."
+      },
+      "base_accuracy_risk": {
+        "score": 7,
+        "justification": "The base LLM answer may be at risk of hallucination or inaccuracy, as it is not grounded in real cases and relies on general knowledge."
+      },
+      "overall_rag_score": {
+        "score": 6,
+        "justification": "The overall quality of the RAG answer is decent, but it is limited by the lack of relevant information in the retrieved cases."
+      },
+      "overall_base_score": {
+        "score": 8,
+        "justification": "The overall quality of the base LLM answer is high, providing a detailed and comprehensive overview of the management of type 2 diabetes with complications."
+      },
+      "winner": "BASE",
+      "reasoning": "The base LLM answer is more complete and detailed, providing a comprehensive overview of the management of type 2 diabetes with complications, while the RAG answer is limited by the lack of relevant information in the retrieved cases."
+    }
+  },
+  {
+    "query_id": 3,
+    "query": "Surgical procedure for total knee replacement in a patient with severe osteoarthritis",
+    "category": "Orthopedic Surgery",
+    "expected_topics": [
+      "knee replacement",
+      "arthroplasty",
+      "osteoarthritis",
+      "prosthesis",
+      "rehabilitation"
+    ],
+    "rag": {
+      "answer": "The query is about the surgical procedure for total knee replacement in a patient with severe osteoarthritis. Based on the retrieved medical cases, the following information can be provided:\n\n**Surgical Procedure:**\nThe surgical procedure for total knee replacement involves the use of cemented components, such as those from Biomet, and the removal of the damaged joint surfaces (Case 1, Case 2). The procedure typically involves a midline incision over the knee, followed by the dissection of soft tissues and the exposure of the joint (Case 1, Case 2). The tibial and femoral components are then implanted, and the patella may or may not be resurfaced (Case 1, Case 5).\n\n**Components Used:**\nThe components used for total knee replacement vary, but may include a cruciate-retaining femoral component, a tibial tray, and a polyethylene insert (Case 1, Case 2). The size of the components may also vary, such as a 62.5-mm femoral component and a 71-mm tibial tray (Case 1).\n\n**Anesthesia:**\nThe anesthesia used for total knee replacement may be spinal (Case 1, Case 2) or general (Case 5).\n\n**Tourniquet Time:**\nThe tourniquet time for total knee replacement is typically less than 60 minutes (Case 1, Case 2), but may be longer in some cases (Case 5, 76 minutes).\n\n**Blood Loss:**\nThe estimated blood loss for total knee replacement is typically minimal (Case 1, Case 2), but may be higher in some cases (Case 5, 150 cc).\n\n**Indications:**\nThe indications for total knee replacement include severe degenerative joint disease, failed conservative measures, and difficulties with activities of daily living (Case 1, Case 5).\n\n**Key Medical Findings:**\nThe key medical findings in patients undergoing total knee replacement include degenerative changes in the joint, such as osteoarthritis (Case 1, Case 5). The surface of the patella may also show minimal wear and osteophytes (Case 5).\n\n**Postoperative Care:**\nThe postoperative care for total knee replacement typically involves the patient being taken to the Postanesthesia Care Unit in stable condition, where they are monitored for any complications (Case 1).\n\nIn summary, the surgical procedure for total knee replacement in a patient with severe osteoarthritis involves the use of cemented components, a midline incision, and the removal of damaged joint surfaces. The components used, anesthesia, tourniquet time, and blood loss may vary depending on the individual case. The indications for total knee replacement include severe degenerative joint disease and failed conservative measures. The key medical findings include degenerative changes in the joint and minimal wear and osteophytes on the surface of the patella.\n\nReferences:\n- Case 1: Total Knee Arthoplasty - Right - 1\n- Case 2: Total Knee Arthoplasty - Right - 1\n- Case 5: Total Knee Replacement \n\nNote: Cases 3 and 4 are not relevant to the query as they describe unicompartmental knee replacement, which is a different procedure than total knee replacement.",
+      "retrieval_time_ms": 68.65,
+      "llm_time_ms": 13345.5,
+      "total_time_ms": 13414.15,
+      "tokens_used": {
+        "prompt_tokens": 2581,
+        "completion_tokens": 677,
+        "total_tokens": 3258
+      },
+      "num_contexts": 5,
+      "keyword_overlap": 0.4,
+      "top_case_scores": [
+        0.5897,
+        0.5762,
+        0.5636
+      ]
+    },
+    "base_llm": {
+      "answer": "Total knee replacement (TKR) is a surgical procedure for patients with severe osteoarthritis (OA) of the knee, where the damaged joint is replaced with an artificial one. The goal of TKR is to alleviate pain, restore function, and improve the patient's quality of life. Here's a detailed overview of the surgical procedure:\n\n**Preoperative Preparation:**\n\n1. **Medical evaluation**: The patient undergoes a thorough medical evaluation to assess their overall health, including any underlying medical conditions, such as diabetes, hypertension, or heart disease.\n2. **Imaging studies**: X-rays, CT scans, or MRI scans are performed to evaluate the extent of knee damage and to plan the surgical approach.\n3. **Blood tests**: Blood tests are conducted to check for any bleeding disorders or infections.\n4. **Anesthesia consultation**: The patient meets with an anesthesiologist to discuss anesthesia options, such as general anesthesia, spinal anesthesia, or regional anesthesia.\n\n**Surgical Procedure:**\n\n1. **Incision and exposure**: The surgeon makes an incision (usually 6-8 inches long) in the front of the knee, and the skin and underlying tissues are gently retracted to expose the knee joint.\n2. **Removal of damaged tissue**: The surgeon removes the damaged cartilage and bone from the knee joint, including the femoral condyles, tibial plateau, and patella (kneecap).\n3. **Preparation of the bone**: The surgeon prepares the bone surfaces to accept the artificial components, including reaming and broaching the femur and tibia.\n4. **Implantation of the prosthetic components**: The surgeon implants the artificial components, including:\n\t* **Femoral component**: A metal alloy component that replaces the damaged femoral condyles.\n\t* **Tibial component**: A metal alloy component that replaces the damaged tibial plateau.\n\t* **Patellar component**: A plastic or metal component that replaces the damaged patella.\n\t* **Polyethylene insert**: A plastic insert that acts as a spacer between the femoral and tibial components.\n5. **Cementation**: The surgeon uses bone cement to secure the prosthetic components to the bone.\n6. **Closure**: The incision is closed in layers, and the skin is closed with sutures or staples.\n\n**Types of Total Knee Replacement:**\n\n1. **Traditional TKR**: This is the most common type of TKR, where the surgeon uses a traditional incision and surgical approach.\n2. **Minimally invasive TKR**: This approach uses smaller incisions and specialized instruments to reduce tissue damage and promote faster recovery.\n3. **Robotic-assisted TKR**: This approach uses a robotic system to assist the surgeon with the procedure, allowing for more precise implant placement and reduced complications.\n4. **Customized TKR**: This approach uses advanced imaging and computer-aided design to create customized prosthetic components that are tailored to the individual patient's anatomy.\n\n**Postoperative Care:**\n\n1. **Pain management**: The patient is given pain medication to manage postoperative pain and discomfort.\n2. **Physical therapy**: The patient begins physical therapy to regain strength, range of motion, and functional ability.\n3. **Wound care**: The patient is instructed on wound care and dressing changes to promote healing and prevent infection.\n4. **Follow-up appointments**: The patient is scheduled for follow-up appointments with the surgeon to monitor progress and remove sutures or staples.\n\n**Risks and Complications:**\n\n1. **Infection**: As with any surgical procedure, there is a risk of infection with TKR.\n2. **Blood clots**: The patient is at risk of developing blood clots in the legs or lungs.\n3. **Nerve damage**: The patient may experience nerve damage, which can result in numbness, tingling, or weakness in the leg.\n4. **Prosthetic loosening**: The prosthetic components can loosen over time, requiring revision surgery.\n5. **Fracture**: The patient may experience a fracture around the prosthetic components, requiring additional surgery.\n\n**Recovery and Rehabilitation:**\n\n1. **Hospital stay**: The patient typically stays in the hospital for 1-3 days after surgery.\n2. **Rehabilitation**: The patient begins rehabilitation, including physical therapy, to regain strength, range of motion, and functional ability.\n3. **Pain management**: The patient is given pain medication to manage postoperative pain and discomfort.\n4. **Follow-up appointments**: The patient is scheduled for follow-up appointments with the surgeon to monitor progress and remove sutures or staples.\n\nOverall, total knee replacement is a highly effective surgical procedure for patients with severe osteoarthritis of the knee, offering significant improvements in pain, function, and quality of life. However, as with any surgical procedure, there are risks and complications that must be carefully considered and managed.",
+      "llm_time_ms": 6349.23,
+      "tokens_used": {
+        "prompt_tokens": 86,
+        "completion_tokens": 1006,
+        "total_tokens": 1092
+      },
+      "keyword_overlap": 0.6
+    },
+    "llm_evaluation": {
+      "context_relevance": {
+        "score": 8,
+        "justification": "The retrieved cases are mostly relevant to the query, but some cases (3 and 4) describe unicompartmental knee replacement, which is not exactly the same as total knee replacement."
+      },
+      "rag_groundedness": {
+        "score": 9,
+        "justification": "The RAG answer is well-grounded in the retrieved cases, citing specific cases (1, 2, and 5) to support its claims."
+      },
+      "rag_completeness": {
+        "score": 8,
+        "justification": "The RAG answer is fairly complete, covering the surgical procedure, components used, anesthesia, tourniquet time, and blood loss, but could be more detailed in some areas."
+      },
+      "rag_specificity": {
+        "score": 9,
+        "justification": "The RAG answer contains specific medical details from real cases, such as the use of Biomet cemented components and the size of the femoral and tibial components."
+      },
+      "base_completeness": {
+        "score": 7,
+        "justification": "The base LLM answer is fairly complete, covering the preoperative preparation, surgical procedure, and postoperative care, but lacks specific details and examples."
+      },
+      "base_specificity": {
+        "score": 4,
+        "justification": "The base LLM answer is somewhat generic, lacking specific details and examples from real cases, but provides a general overview of the procedure."
+      },
+      "base_accuracy_risk": {
+        "score": 6,
+        "justification": "The base LLM answer has a moderate risk of hallucination or inaccuracy, as it provides general information without citing specific sources or cases."
+      },
+      "overall_rag_score": {
+        "score": 9,
+        "justification": "The RAG answer is of high quality, providing specific and detailed information grounded in real cases."
+      },
+      "overall_base_score": {
+        "score": 5,
+        "justification": "The base LLM answer is of average quality, providing general information but lacking specificity and detail."
+      },
+      "winner": "RAG",
+      "reasoning": "The RAG answer is superior to the base LLM answer due to its specificity, detail, and grounding in real cases, making it a more reliable and trustworthy source of information."
+    }
+  },
+  {
+    "query_id": 4,
+    "query": "Pediatric patient with recurrent upper respiratory infections and bilateral otitis media",
+    "category": "Pediatrics / ENT",
+    "expected_topics": [
+      "otitis media",
+      "antibiotics",
+      "tympanic membrane",
+      "respiratory infection",
+      "pediatric"
+    ],
+    "rag": {
+      "answer": "The query pertains to a pediatric patient with recurrent upper respiratory infections and bilateral otitis media. Based on the provided cases, several key points can be highlighted:\n\n1. **Recurrent Otitis Media**: Case 1 and Case 2 describe patients with chronic otitis media. In Case 1, a 3-year-old female has had 12 rounds of antibiotics for otitis media, presenting with symptoms such as cough, fever, irritability, and speech and language delay. Case 2 describes a 14-month-old with a history of chronic recurrent episodes of otitis media, totaling 6 bouts, requiring antibiotics since birth.\n\n2. **Associated Symptoms and Findings**: Both Case 1 and Case 2 mention associated symptoms such as cough and fever. Additionally, Case 1 notes speech and language delay, which could be related to the hearing impairment caused by chronic otitis media. Case 3 and Case 4, which appear to be duplicates, describe a 5-year-old male with ongoing purulent rhinitis, probable sinusitis, and serous otitis, highlighting the complexity of upper respiratory infections in pediatric patients.\n\n3. **Adenoid Hypertrophy**: In Case 1, the examination of the nasopharynx reveals adenoid hypertrophy, which is a common finding in children with recurrent otitis media. Adenoid hypertrophy can contribute to Eustachian tube dysfunction, leading to middle ear effusions and infections.\n\n4. **Treatment Approaches**: The treatment approaches mentioned include the use of antibiotics (amoxicillin in Case 3 and Case 4, and the consideration of Omnicef in Case 3 and Case 4), myringotomy and tube insertion under general anesthesia (planned in Case 2), and the use of saline nasal sprays and topical antibiotics like Neosporin for associated conditions like impetigo.\n\n5. **Social and Family History**: Case 1 mentions that the child is in a large daycare, which could be a contributing factor to the recurrent infections due to increased exposure to pathogens. Case 3 and Case 4 note a family history of siblings being on antibiotics for ear infections and URIs, suggesting a possible genetic or environmental predisposition to upper respiratory infections.\n\nIn conclusion, the provided cases highlight the complexity of managing pediatric patients with recurrent upper respiratory infections and bilateral otitis media. Key findings include the presence of adenoid hypertrophy, the importance of considering the social and family history, and the various treatment approaches that can be employed. However, it's crucial to note that each patient's condition is unique, and a comprehensive evaluation is necessary to determine the best course of treatment.\n\n**Recommendations based on the cases**:\n\n- Further evaluation of the patient's adenoids to assess for hypertrophy and potential contribution to Eustachian tube dysfunction.\n- Consideration of allergy testing if symptoms persist, as allergies can exacerbate upper respiratory infections.\n- Discussion of the risks and benefits of myringotomy and tube insertion if the patient experiences frequent or severe episodes of otitis media.\n- Emphasis on good hygiene practices, especially in daycare settings, to reduce the transmission of pathogens.\n- Monitoring for speech and language development, as chronic otitis media can impact these areas.\n\n**Limitations**: The provided cases do not offer a comprehensive view of all possible causes, symptoms, and treatments for pediatric patients with recurrent upper respiratory infections and bilateral otitis media. Additional information and a thorough patient evaluation are necessary for an accurate diagnosis and effective treatment plan.",
+      "retrieval_time_ms": 48.24,
+      "llm_time_ms": 15515.06,
+      "total_time_ms": 15563.3,
+      "tokens_used": {
+        "prompt_tokens": 2474,
+        "completion_tokens": 714,
+        "total_tokens": 3188
+      },
+      "num_contexts": 5,
+      "keyword_overlap": 0.8,
+      "top_case_scores": [
+        0.6456,
+        0.6231,
+        0.6106
+      ]
+    },
+    "base_llm": {
+      "answer": "A pediatric patient with recurrent upper respiratory infections (URIs) and bilateral otitis media (middle ear infections) is a common presentation in clinical practice. This combination of symptoms can be caused by various underlying factors, and a thorough evaluation is necessary to determine the underlying cause.\n\n**Possible Causes:**\n\n1. **Allergic Rhinitis**: Allergies can contribute to recurrent URIs and otitis media. Allergens such as dust mites, pollen, and pet dander can trigger inflammation in the nasal passages and Eustachian tubes, leading to middle ear infections.\n2. **Anatomical Abnormalities**: Enlarged adenoids, a deviated nasal septum, or other anatomical issues can increase the risk of URIs and otitis media.\n3. **Immune System Dysfunction**: Immunodeficiency disorders, such as primary immunodeficiency diseases (e.g., IgA deficiency), can increase the susceptibility to recurrent infections.\n4. **Environmental Factors**: Exposure to tobacco smoke, air pollution, or other environmental toxins can contribute to recurrent URIs and otitis media.\n5. **Genetic Predisposition**: Some children may be more prone to recurrent infections due to genetic factors, such as a family history of allergies or immune system disorders.\n\n**Clinical Evaluation:**\n\nTo evaluate this patient, the following steps should be taken:\n\n1. **Medical History**: Obtain a detailed medical history, including the frequency and severity of URIs and otitis media, as well as any previous treatments or interventions.\n2. **Physical Examination**: Perform a thorough physical examination, including an otoscopic examination to assess the middle ear and tympanic membrane.\n3. **Laboratory Tests**: Consider ordering laboratory tests, such as:\n\t* Complete Blood Count (CBC) to evaluate for signs of infection or inflammation.\n\t* Allergy testing (e.g., skin prick test or blood tests) to assess for allergic rhinitis.\n\t* Immunoglobulin levels (e.g., IgA, IgG, IgM) to evaluate for immune system dysfunction.\n4. **Imaging Studies**: Consider ordering imaging studies, such as:\n\t* Lateral neck X-ray to evaluate the adenoids and nasal passages.\n\t* Computed Tomography (CT) scan or Magnetic Resonance Imaging (MRI) to assess the nasal passages and sinuses.\n\n**Treatment and Management:**\n\nThe treatment and management of this patient will depend on the underlying cause of the recurrent URIs and otitis media. Possible treatment options include:\n\n1. **Antibiotics**: For acute otitis media, antibiotics may be prescribed to treat the infection.\n2. **Allergy Management**: If allergic rhinitis is suspected, allergy testing and avoidance of allergens may be recommended.\n3. **Adenoidectomy**: If enlarged adenoids are contributing to the recurrent infections, adenoidectomy may be considered.\n4. **Tympanostomy Tubes**: For recurrent otitis media, tympanostomy tubes may be inserted to drain the middle ear and reduce the risk of further infections.\n5. **Immunoglobulin Replacement Therapy**: If immune system dysfunction is suspected, immunoglobulin replacement therapy may be considered.\n\n**Preventive Measures:**\n\nTo reduce the risk of recurrent URIs and otitis media, the following preventive measures can be recommended:\n\n1. **Vaccinations**: Ensure the patient is up-to-date on all recommended vaccinations, including the pneumococcal conjugate vaccine and influenza vaccine.\n2. **Good Hygiene Practices**: Encourage good hygiene practices, such as frequent handwashing and avoiding close contact with individuals who are sick.\n3. **Environmental Modifications**: Recommend environmental modifications, such as reducing exposure to tobacco smoke and air pollution.\n4. **Breastfeeding**: If the patient is an infant, breastfeeding can provide protective benefits against recurrent infections.\n\nBy following a thorough evaluation and treatment plan, it is possible to reduce the frequency and severity of recurrent URIs and otitis media in pediatric patients.",
+      "llm_time_ms": 3194.7,
+      "tokens_used": {
+        "prompt_tokens": 83,
+        "completion_tokens": 811,
+        "total_tokens": 894
+      },
+      "keyword_overlap": 1.0
+    },
+    "llm_evaluation": {
+      "context_relevance": {
+        "score": 9,
+        "justification": "The retrieved cases are highly relevant to the query, discussing pediatric patients with recurrent upper respiratory infections and bilateral otitis media."
+      },
+      "rag_groundedness": {
+        "score": 9,
+        "justification": "The RAG answer is well-grounded in the retrieved cases, citing specific cases and incorporating details from the cases into the response."
+      },
+      "rag_completeness": {
+        "score": 8,
+        "justification": "The RAG answer is detailed and covers various aspects of the topic, including possible causes, treatment approaches, and recommendations, but could be more comprehensive."
+      },
+      "rag_specificity": {
+        "score": 9,
+        "justification": "The RAG answer contains specific medical details from real cases, such as the use of antibiotics, myringotomy, and tube insertion, demonstrating a high level of specificity."
+      },
+      "base_completeness": {
+        "score": 7,
+        "justification": "The base LLM answer covers the basic aspects of the topic but lacks the depth and specificity of the RAG answer, particularly in terms of real-case applications."
+      },
+      "base_specificity": {
+        "score": 5,
+        "justification": "The base LLM answer is more generic and lacks specific details from real cases, relying on general knowledge about the topic."
+      },
+      "base_accuracy_risk": {
+        "score": 8,
+        "justification": "There is a moderate risk of hallucination or inaccuracy in the base LLM answer, as it provides general information without referencing specific cases or evidence."
+      },
+      "overall_rag_score": {
+        "score": 9,
+        "justification": "The RAG answer demonstrates high quality, relevance, and specificity, making it a more reliable and informative response."
+      },
+      "overall_base_score": {
+        "score": 6,
+        "justification": "The base LLM answer, while providing some useful general information, lacks the specificity, completeness, and grounding in real cases that the RAG answer offers."
+      },
+      "winner": "RAG",
+      "reasoning": "The RAG answer outperforms the base LLM answer due to its high relevance, specificity, and completeness, as well as its grounding in real cases, making it a more reliable and informative response to the query."
+    }
+  },
+  {
+    "query_id": 5,
+    "query": "Colonoscopy findings in a patient with chronic abdominal pain and suspected inflammatory bowel disease",
+    "category": "Gastroenterology",
+    "expected_topics": [
+      "colonoscopy",
+      "Crohn's",
+      "ulcerative colitis",
+      "biopsy",
+      "inflammation",
+      "bowel"
+    ],
+    "rag": {
+      "answer": "The query is about colonoscopy findings in a patient with chronic abdominal pain and suspected inflammatory bowel disease. Based on the provided cases, there is limited information directly addressing the query. However, we can gather some relevant insights from the cases.\n\nCase 1 and Case 2 have similar indications for colonoscopy, including rectal bleeding, constipation, abnormal CT scan, and ruling out inflammatory bowel disease. Unfortunately, the transcription for these cases does not provide the colonoscopy findings.\n\nCase 3 is a consultation for a screening colonoscopy, and it does not directly relate to the query about chronic abdominal pain and suspected inflammatory bowel disease. However, it provides some general information about the patient's medical history and the decision to perform a repeat colonoscopy due to a strong family history of colon cancer.\n\nCase 4 is a colonoscopy with biopsy, and the preprocedure diagnosis includes abdominal pain, diarrhea, and fever. Although this case is more relevant to the query, the postprocedure diagnosis is pending pathology, and the transcription does not provide the final colonoscopy findings.\n\nCase 5 is the most relevant to the query, as it involves a colonoscopy for suspected irritable bowel syndrome, which can present with chronic abdominal pain. The reported procedure and endoscopic impression reveal a normal colonoscopy with no evidence of inflammatory disease, polyp, or other neoplasm, which is consistent with irritable bowel syndrome (Case 5).\n\nIn summary, based on the provided cases, there is limited direct information about colonoscopy findings in a patient with chronic abdominal pain and suspected inflammatory bowel disease. However, Case 5 suggests that a normal colonoscopy can be consistent with a diagnosis of irritable bowel syndrome, which may present with similar symptoms. To fully address the query, more specific information about colonoscopy findings in patients with suspected inflammatory bowel disease would be necessary.",
+      "retrieval_time_ms": 49.37,
+      "llm_time_ms": 7401.4,
+      "total_time_ms": 7450.77,
+      "tokens_used": {
+        "prompt_tokens": 1137,
+        "completion_tokens": 383,
+        "total_tokens": 1520
+      },
+      "num_contexts": 5,
+      "keyword_overlap": 0.5,
+      "top_case_scores": [
+        0.5697,
+        0.565,
+        0.5514
+      ]
+    },
+    "base_llm": {
+      "answer": "A colonoscopy is a crucial diagnostic tool for evaluating patients with chronic abdominal pain and suspected inflammatory bowel disease (IBD). The procedure involves inserting a flexible tube with a camera and light on the end into the colon to visualize the inner lining of the colon and rectum.\n\n**Common Colonoscopy Findings in IBD:**\n\nIn patients with suspected IBD, colonoscopy findings may include:\n\n1. **Mucosal inflammation**: The mucosal lining of the colon may appear red, swollen, and inflamed, with visible signs of bleeding or ulceration.\n2. **Ulcers**: Shallow or deep ulcers may be present, which can be single or multiple, and may be accompanied by bleeding or pus.\n3. **Granular or friable mucosa**: The mucosal surface may appear granular or friable, indicating active inflammation.\n4. **Loss of haustral folds**: The normal haustral folds of the colon may be lost or reduced, giving the colon a smooth appearance.\n5. **Pseudopolyps**: Inflammatory polyps, also known as pseudopolyps, may be present, which are areas of regenerating mucosa that can appear as polypoid lesions.\n6. **Strictures**: Narrowing of the colon lumen due to chronic inflammation and scarring may be observed.\n7. **Skip lesions**: Areas of normal-appearing mucosa may be interspersed with areas of inflammation, giving a \"skip\" appearance.\n\n**Specific Findings in Different Types of IBD:**\n\n1. **Ulcerative Colitis (UC)**: Colonoscopy findings in UC typically include:\n\t* Continuous mucosal inflammation, starting from the rectum and extending proximally.\n\t* Ulcers, often with a uniform appearance.\n\t* Granular or friable mucosa.\n2. **Crohn's Disease (CD)**: Colonoscopy findings in CD may include:\n\t* Skip lesions, with areas of normal mucosa interspersed with areas of inflammation.\n\t* Deep ulcers, which can be linear or serpiginous.\n\t* Cobblestone appearance, due to deep longitudinal ulcers and inflammation.\n\t* Strictures, which can be single or multiple.\n3. **Indeterminate Colitis**: In some cases, the colonoscopy findings may not be typical of either UC or CD, and the diagnosis may be classified as indeterminate colitis.\n\n**Additional Diagnostic Tools:**\n\nTo support the diagnosis of IBD, additional diagnostic tools may be used, including:\n\n1. **Biopsy**: Tissue samples may be taken during colonoscopy to examine for histological evidence of inflammation and to rule out other conditions, such as infectious colitis or colorectal cancer.\n2. **Blood tests**: Blood tests, such as complete blood count (CBC), erythrocyte sedimentation rate (ESR), and C-reactive protein (CRP), may be used to evaluate for signs of inflammation and anemia.\n3. **Imaging studies**: Imaging studies, such as computed tomography (CT) or magnetic resonance imaging (MRI), may be used to evaluate for extraintestinal manifestations of IBD, such as liver disease or osteoporosis.\n\n**Management and Treatment:**\n\nThe management and treatment of IBD depend on the specific diagnosis, disease severity, and individual patient factors. Treatment options may include:\n\n1. **Aminosalicylates**: Medications, such as sulfasalazine or mesalamine, which can help reduce inflammation and induce remission.\n2. **Corticosteroids**: Medications, such as prednisone, which can help reduce inflammation and induce remission.\n3. **Immunomodulators**: Medications, such as azathioprine or mercaptopurine, which can help reduce inflammation and prevent relapse.\n4. **Biologic agents**: Medications, such as infliximab or adalimumab, which can help reduce inflammation and induce remission.\n5. **Surgery**: In some cases, surgery may be necessary to remove affected portions of the colon or to treat complications, such as bowel obstruction or abscesses.\n\nIt is essential to note that the diagnosis and management of IBD should be individualized and guided by a gastroenterologist or other qualified healthcare professional.",
+      "llm_time_ms": 6862.41,
+      "tokens_used": {
+        "prompt_tokens": 86,
+        "completion_tokens": 881,
+        "total_tokens": 967
+      },
+      "keyword_overlap": 1.0
+    },
+    "llm_evaluation": {
+      "context_relevance": {
+        "score": 6,
+        "justification": "The retrieved cases are somewhat relevant to the query, but they do not provide a direct answer to the question about colonoscopy findings in a patient with chronic abdominal pain and suspected inflammatory bowel disease."
+      },
+      "rag_groundedness": {
+        "score": 8,
+        "justification": "The RAG answer is grounded in the retrieved cases, citing specific cases and providing some relevant insights, but it lacks a direct answer to the query."
+      },
+      "rag_completeness": {
+        "score": 4,
+        "justification": "The RAG answer is not very complete, as it does not provide a detailed description of colonoscopy findings in patients with suspected inflammatory bowel disease."
+      },
+      "rag_specificity": {
+        "score": 5,
+        "justification": "The RAG answer contains some specific medical details from real cases, but it is not very detailed and does not provide a comprehensive overview of colonoscopy findings in patients with suspected inflammatory bowel disease."
+      },
+      "base_completeness": {
+        "score": 9,
+        "justification": "The base LLM answer is very complete, providing a detailed description of colonoscopy findings in patients with suspected inflammatory bowel disease, including common findings, specific findings in different types of IBD, and additional diagnostic tools."
+      },
+      "base_specificity": {
+        "score": 8,
+        "justification": "The base LLM answer contains specific details about colonoscopy findings in patients with suspected inflammatory bowel disease, including descriptions of mucosal inflammation, ulcers, and other findings."
+      },
+      "base_accuracy_risk": {
+        "score": 6,
+        "justification": "The base LLM answer may contain some risks of hallucination or inaccuracy, as it is generated without the context of real cases, but it appears to be generally accurate and consistent with medical knowledge."
+      },
+      "overall_rag_score": {
+        "score": 5,
+        "justification": "The overall quality of the RAG answer is average, as it is grounded in the retrieved cases but lacks completeness and specificity."
+      },
+      "overall_base_score": {
+        "score": 8,
+        "justification": "The overall quality of the base LLM answer is high, as it is complete, specific, and accurate, but may contain some risks of hallucination or inaccuracy."
+      },
+      "winner": "BASE",
+      "reasoning": "The base LLM answer is more complete, specific, and accurate than the RAG answer, making it the better choice for answering the query about colonoscopy findings in a patient with chronic abdominal pain and suspected inflammatory bowel disease."
+    }
+  }
+]
