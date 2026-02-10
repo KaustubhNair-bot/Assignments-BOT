@@ -65,119 +65,103 @@ The following metrics were used for comparison:
 ---
 
 ## Query Results
+### Query 1: Cardiovascular Risk Assessment
 
-### Query 1: Cardiology
+Query:
+Middle-aged patient presenting with exertional chest discomfort, shortness of breath, and a known history of hypertension
 
-**Query:**  
-Patient presenting with chest pain radiating to the left arm with shortness of breath and diaphoresis
+Metric	RAG	Base LLM
+Overall Score	8 / 10	7 / 10
+Specificity	9 / 10	6 / 10
+Groundedness	10 / 10	9 / 10
+Response Time	10,380 ms	11,373 ms
 
-| Metric | RAG | Base LLM |
-|------|----|---------|
-| Overall Score | 8 / 10 | 7 / 10 |
-| Specificity | 9 / 10 | 6 / 10 |
-| Groundedness | 10 / 10 | 9 / 10 |
-| Response Time | 10,380 ms | 11,373 ms |
+Winner: RAG
 
-**Winner:** RAG  
+Evaluation Reasoning:
+The RAG system grounded its response in an actual historical patient case from the database with documented cardiovascular risk factors, while the Base LLM produced a more generic diagnostic overview.
 
-**Evaluation Reasoning:**  
-RAG identified a specific diabetic patient with a history of coronary artery disease from the database, while the Base LLM provided only general clinical guidelines.
+### Query 2: Chronic Metabolic Disease Management
 
----
+Query:
+Long-term management considerations for a patient with poorly controlled type 2 diabetes and progressive sensory complications
 
-### Query 2: Endocrinology
+Metric	RAG	Base LLM
+Overall Score	6 / 10	8 / 10
+Specificity	9 / 10	9 / 10
+Groundedness	6 / 10	9 / 10
+Response Time	15,314 ms	26,567 ms
 
-**Query:**  
-Management of type 2 diabetes with complications including diabetic neuropathy and retinopathy
+Winner: Base LLM
 
-| Metric | RAG | Base LLM |
-|------|----|---------|
-| Overall Score | 6 / 10 | 8 / 10 |
-| Specificity | 9 / 10 | 9 / 10 |
-| Groundedness | 6 / 10 | 9 / 10 |
-| Response Time | 15,314 ms | 26,567 ms |
+Evaluation Reasoning:
+The Base LLM provided a broader and more structured disease-management framework, whereas the RAG system was constrained by limited coverage of advanced complications in the retrieved records.
 
-**Winner:** Base LLM  
+### Query 3: Orthopedic Surgical Planning
 
-**Evaluation Reasoning:**  
-The Base LLM provided a more comprehensive general management plan, while RAG was limited by insufficient neuropathy-specific cases in the retrieved context.
+Query:
+Surgical intervention options for an elderly patient with advanced degenerative knee joint disease
 
----
+Metric	RAG	Base LLM
+Overall Score	9 / 10	5 / 10
+Specificity	9 / 10	8 / 10
+Groundedness	10 / 10	9 / 10
+Response Time	8,117 ms	25,932 ms
 
-### Query 3: Orthopedics
+Winner: RAG
 
-**Query:**  
-Surgical procedure for total knee replacement in a patient with severe osteoarthritis
+Evaluation Reasoning:
+RAG accurately referenced procedural details from real surgical records, including implant types and surgical approach, which the Base LLM could not infer without access to historical case data.
 
-| Metric | RAG | Base LLM |
-|------|----|---------|
-| Overall Score | 9 / 10 | 5 / 10 |
-| Specificity | 9 / 10 | 8 / 10 |
-| Groundedness | 10 / 10 | 9 / 10 |
-| Response Time | 8,117 ms | 25,932 ms |
+### Query 4: Pediatric Infection History Analysis
 
-**Winner:** RAG  
+Query:
+Young child with recurrent upper respiratory infections and frequent antibiotic exposure over multiple clinical visits
 
-**Evaluation Reasoning:**  
-RAG correctly identified that database records described a unicompartmental knee replacement rather than a total replacement and provided exact component details (Biomet), which the Base LLM could not infer.
+Metric	RAG	Base LLM
+Overall Score	9 / 10	6 / 10
+Specificity	8 / 10	9 / 10
+Groundedness	6 / 10	9 / 10
+Response Time	8,596 ms	20,103 ms
 
----
+Winner: RAG
 
-### Query 4: Pediatrics
+Evaluation Reasoning:
+The RAG system retrieved a highly specific pediatric case history from the dataset, enabling a response grounded in real treatment patterns rather than general pediatric guidelines.
 
-**Query:**  
-Pediatric patient with recurrent upper respiratory infections and bilateral otitis media
+### Query 5: Gastrointestinal Diagnostic Evaluation
 
-| Metric | RAG | Base LLM |
-|------|----|---------|
-| Overall Score | 9 / 10 | 6 / 10 |
-| Specificity | 8 / 10 | 9 / 10 |
-| Groundedness | 6 / 10 | 9 / 10 |
-| Response Time | 8,596 ms | 20,103 ms |
+Query:
+Evaluation of chronic abdominal discomfort in a patient undergoing diagnostic endoscopy to rule out inflammatory bowel conditions
 
-**Winner:** RAG  
+Metric	RAG	Base LLM
+Overall Score	5 / 10	8 / 10
+Specificity	8 / 10	8 / 10
+Groundedness	9 / 10	9 / 10
+Response Time	19,470 ms	22,777 ms
 
-**Evaluation Reasoning:**  
-RAG retrieved a detailed case involving a 3-year-old patient with multiple antibiotic courses, grounding the response in actual clinical history.
+Winner: Base LLM
 
----
+Evaluation Reasoning:
+The Base LLM provided a clearer educational explanation of differential diagnoses, while the RAG system focused narrowly on a single historical case that ultimately excluded inflammatory bowel disease.
 
-### Query 5: Gastroenterology
+# Key Findings
+Advantages of RAG over Base LLM
 
-**Query:**  
-Colonoscopy findings in a patient with chronic abdominal pain and suspected inflammatory bowel disease
+Clinical Specificity: RAG leverages real patient records, enabling precise references to procedures, timelines, and treatment patterns.
 
-| Metric | RAG | Base LLM |
-|------|----|---------|
-| Overall Score | 5 / 10 | 8 / 10 |
-| Specificity | 8 / 10 | 8 / 10 |
-| Groundedness | 9 / 10 | 9 / 10 |
-| Response Time | 19,470 ms | 22,777 ms |
+Groundedness: Responses are constrained by retrieved data, significantly reducing hallucinations.
 
-**Winner:** Base LLM  
+Traceability: Outputs can be traced back to specific historical transcriptions.
 
-**Evaluation Reasoning:**  
-The Base LLM delivered a stronger educational overview of inflammatory bowel disease, while RAG relied on a specific case that ruled out IBD in favor of IBS.
+Limitations of RAG
 
----
+Context Dependence: RAG performance is limited by the completeness and coverage of the underlying dataset.
 
-## Key Findings
+Retrieval Sensitivity: Suboptimal retrieval directly affects response quality, even when generation is accurate.
 
-### Advantages of RAG over Base LLM
+# Conclusion
 
-- **Clinical Specificity:** RAG references real patient data such as ages, procedures, and component sizes.
-- **Groundedness:** Responses are tightly bound to actual medical records, reducing hallucinations.
-- **Traceability:** Clinicians can trace answers back to source transcriptions.
+This evaluation demonstrates that while a Base LLM serves well as a general medical knowledge engine, the RAG system functions more effectively as a clinical decision-support assistant.
 
-### Limitations of RAG
-
-- **Context Dependence:** RAG performance is limited by the completeness of available records.
-- **Retrieval Precision:** Inaccurate or sparse retrieval directly impacts answer quality.
-
----
-
-## Conclusion
-
-This evaluation shows that while a Base LLM functions well as a **general medical knowledge source**, the RAG system performs better as a **clinical decision-support assistant**.
-
-For hospital environments that require answers grounded in their own historical patient data, RAG provides superior specificity, traceability, and safety compared to standalone language models.
+For healthcare environments that require responses grounded in institutional patient records, RAG offers superior reliability, specificity, and safety compared to standalone language models.

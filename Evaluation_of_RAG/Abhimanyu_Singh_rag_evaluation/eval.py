@@ -12,31 +12,62 @@ MODEL = "mistral"
 # 5 Diverse Medical Queries for Benchmarking
 TEST_SUITE = [
     {
-        "id": 1, "category": "Cardiology",
-        "query": "Patient presenting with chest pain radiating to the left arm with shortness of breath and diaphoresis",
-        "expected_topics": ["myocardial infarction", "ECG", "troponin", "chest pain"]
+        "id": 1,
+        "category": "Cardiology",
+        "query": "Middle-aged patient with exertional chest discomfort, shortness of breath, and a history of hypertension",
+        "expected_topics": [
+            "coronary artery disease",
+            "hypertension",
+            "ECG",
+            "cardiac risk factors"
+        ]
     },
     {
-        "id": 2, "category": "Endocrinology",
-        "query": "Management of type 2 diabetes with complications including diabetic neuropathy and retinopathy",
-        "expected_topics": ["diabetes", "insulin", "neuropathy", "retinopathy"]
+        "id": 2,
+        "category": "Endocrinology",
+        "query": "Long-term management considerations for a patient with poorly controlled type 2 diabetes and progressive sensory complications",
+        "expected_topics": [
+            "type 2 diabetes",
+            "glycemic control",
+            "neuropathy",
+            "chronic complications"
+        ]
     },
     {
-        "id": 3, "category": "Orthopedic",
-        "query": "Surgical procedure for total knee replacement in a patient with severe osteoarthritis",
-        "expected_topics": ["knee replacement", "arthroplasty", "osteoarthritis"]
+        "id": 3,
+        "category": "Orthopedics",
+        "query": "Surgical intervention options for an elderly patient with advanced degenerative knee joint disease",
+        "expected_topics": [
+            "osteoarthritis",
+            "knee arthroplasty",
+            "joint degeneration",
+            "orthopedic surgery"
+        ]
     },
     {
-        "id": 4, "category": "Pediatrics",
-        "query": "Pediatric patient with recurrent upper respiratory infections and bilateral otitis media",
-        "expected_topics": ["otitis media", "antibiotics", "pediatric"]
+        "id": 4,
+        "category": "Pediatrics",
+        "query": "Young child with recurrent upper respiratory infections and frequent antibiotic exposure over multiple clinical visits",
+        "expected_topics": [
+            "upper respiratory infection",
+            "pediatric infections",
+            "antibiotic use",
+            "otitis media"
+        ]
     },
     {
-        "id": 5, "category": "Gastroenterology",
-        "query": "Colonoscopy findings in a patient with chronic abdominal pain and suspected inflammatory bowel disease",
-        "expected_topics": ["colonoscopy", "Crohn's", "ulcerative colitis", "inflammation"]
+        "id": 5,
+        "category": "Gastroenterology",
+        "query": "Evaluation of chronic abdominal discomfort in a patient undergoing diagnostic endoscopy to rule out inflammatory bowel conditions",
+        "expected_topics": [
+            "endoscopy",
+            "inflammatory bowel disease",
+            "chronic abdominal pain",
+            "IBD differential diagnosis"
+        ]
     }
 ]
+
 
 def query_base_llm(question):
     """Calls the Base LLM (no RAG context) for comparison."""
