@@ -1,0 +1,26 @@
+# Core dependencies
+streamlit>=1.31.0
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Vector database and embeddings
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.0
+
+# Authentication
+PyJWT>=2.8.0
+bcrypt>=4.1.0
+
+# LLM Integration
+groq>=0.4.0
+
+# Environment management
+python-dotenv>=1.0.0
+
+# Data processing
+tqdm>=4.65.0
+
+# Evaluation metrics
+rouge-score>=0.1.2
+bert-score>=0.3.13
+nltk>=3.8.0
