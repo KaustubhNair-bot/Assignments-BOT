@@ -4,14 +4,14 @@ import numpy as np
 
 embed = SentenceTransformer('all-mpnet-base-v2')
 
-# ---- Metric 1: Relevancy ----
+# Metric 1: Relevancy
 def relevancy_score(question, answer):
     q = embed.encode([question])
     a = embed.encode([answer])
     return float(cosine_similarity(q, a)[0][0])
 
 
-# ---- Metric 2: Faithfulness ----
+# Metric 2: Faithfulness
 def faithfulness_score(answer, retrieved_chunks):
 
     if not retrieved_chunks:
@@ -27,7 +27,7 @@ def faithfulness_score(answer, retrieved_chunks):
     return float(max(scores))
 
 
-# ---- Metric 3: Context Utilization ----
+# Metric 3: Context Utilization
 def context_util(answer, retrieved_chunks):
 
     used = 0

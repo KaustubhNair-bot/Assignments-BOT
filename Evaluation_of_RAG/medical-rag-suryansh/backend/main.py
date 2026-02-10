@@ -5,7 +5,7 @@ from backend.rag import get_retrieved_texts, rag_with_llm, compare_models
 app = FastAPI()
 
 
-# -------- LOGIN --------
+#login
 @app.post("/login")
 def login(data: dict):
 
@@ -19,7 +19,7 @@ def login(data: dict):
 
 
 
-# -------- SIMPLE RETRIEVAL (OLD STYLE) --------
+# simple retrival
 @app.get("/search")
 def rag(query:str, token: str = Header()):
 
@@ -32,9 +32,7 @@ def rag(query:str, token: str = Header()):
 
     return {"results": results}
 
-
-
-# -------- FULL RAG + LLM --------
+# full RAG + LLM
 @app.get("/ask")
 def ask(query:str, token: str = Header()):
 
@@ -45,9 +43,7 @@ def ask(query:str, token: str = Header()):
 
     return rag_with_llm(query)
 
-
-
-# -------- COMPARISON API --------
+# comparison API
 @app.get("/compare")
 def compare(query:str, token: str = Header()):
 

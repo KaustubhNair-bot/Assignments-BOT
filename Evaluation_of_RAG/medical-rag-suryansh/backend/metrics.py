@@ -1,16 +1,12 @@
 import re
 from collections import Counter
 
-# ---------- TEXT HELPERS ----------
-
 def tokenize(t):
     t = t.lower()
     t = re.sub(r"[^a-z0-9 ]", " ", t)
     return t.split()
 
-
-# ---------- METRICS ----------
-
+# metrics
 def keyword_coverage(answer, query):
 
     medical_terms = {
