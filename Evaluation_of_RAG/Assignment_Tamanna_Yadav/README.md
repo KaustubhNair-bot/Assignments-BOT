@@ -23,15 +23,15 @@
 
 | Metric | RAG System | Base LLM | Winner |
 |--------|:----------:|:--------:|:------:|
-| **Answer Relevance** | 0.991 | 0.976 | RAG |
-| **Faithfulness** | 0.404 | 0.000 | RAG |
-| **Context Precision** | 0.720 | 0.000 | RAG |
-| **Answer Completeness** | 0.960 | 1.000 | Base LLM |
-| **Hallucination Risk** | 0.179 | 0.300 | RAG |
+| **Answer Relevance** | 0.986 | 0.976 | RAG |
+| **Faithfulness** | 0.362 | 0.000 | RAG |
+| **Hallucination Risk** | 0.191 | 0.300 | RAG |
+| **MRR** | 0.800 | N/A | RAG |
+| **ROUGE-L** | 0.179 | N/A | RAG |
 
 ### Key Finding
 
-> **RAG system shows 40% lower hallucination risk** (0.179 vs 0.300) because answers are grounded in actual medical records from the database, not fabricated from training data.
+> **RAG system shows 36% lower hallucination risk** (0.191 vs 0.300) because answers are grounded in actual medical records from the database, not fabricated from training data.
 
 ### Why RAG Outperforms Base LLM
 
@@ -50,7 +50,7 @@
 │  ├── Retrieves relevant cases from database                     │
 │  ├── Answers grounded in real medical transcriptions            │
 │  ├── Cites specific cases and findings                          │
-│  └── Lower hallucination risk (40% reduction!)                  │
+│  └── Lower hallucination risk (36% reduction!)                  │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
