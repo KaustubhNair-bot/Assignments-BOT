@@ -1,7 +1,6 @@
 .env
+**/.env
+*.env
 __pycache__/
 *.pyc
 .DS_Store
-embeddings/medical.index
-embeddings/texts.txt
-data/medical.csv
