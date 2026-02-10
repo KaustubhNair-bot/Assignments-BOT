@@ -1,0 +1,36 @@
+# Core web framework
+fastapi
+uvicorn
+python-multipart
+
+# Auth
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt==4.0.1
+
+# Database
+sqlalchemy
+
+# Data validation
+pydantic
+pydantic-settings
+
+# RAG pipeline
+langchain-community
+langchain-cohere
+langchain-groq
+langchain-text-splitters
+pinecone
+
+# LLM providers
+groq
+
+# Data processing
+pandas
+
+# Environment
+python-dotenv
+
+# Frontend
+streamlit
+httpx
