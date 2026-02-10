@@ -1,0 +1,21 @@
+# Core Framework & API
+fastapi
+uvicorn[standard]
+streamlit
+
+# Data Processing & ML
+pandas
+numpy
+sentence-transformers
+faiss-cpu
+
+# Web & HTTP
+requests
+pydantic
+
+# Authentication & Security
+python-jose[cryptography]
+
+# Utilities
+tqdm
+pathlib2
