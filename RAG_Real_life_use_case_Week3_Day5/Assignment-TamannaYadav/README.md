@@ -233,6 +233,58 @@ Benchmarks generate the following in `benchmark_results/`:
 - `BENCHMARK_REPORT.md` - Comprehensive analysis
 - `benchmark_analysis.json` - Structured conclusions
 
+---
+
+## 📊 Evaluation Results - RAG vs Base LLM
+
+### Summary Comparison
+
+| Metric | RAG System | Base LLM | Winner | Improvement |
+|--------|:----------:|:--------:|:------:|:-----------:|
+| **Answer Relevance** | 0.980 | 1.000 | Tie | - |
+| **Faithfulness** | 0.396 | 0.000 | **RAG** | ∞ |
+| **Hallucination Risk** | 0.201 | 0.320 | **RAG** | **37% lower** |
+| **ROUGE-L** | 0.215 | 0.000 | **RAG** | ∞ |
+| **MRR** | 0.500 | 0.000 | **RAG** | ∞ |
+
+### Key Finding
+
+> **RAG system shows 37% lower hallucination risk** (0.201 vs 0.320) because answers are grounded in actual Tesla documents, not fabricated from training data.
+
+### Why RAG Outperforms Base LLM
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    RAG vs Base LLM                               │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  BASE LLM (Without RAG):                                         │
+│  ├── Relies only on training data (knowledge cutoff)            │
+│  ├── May hallucinate specific details                           │
+│  ├── Generic knowledge                                          │
+│  └── No grounding in actual documents                           │
+│                                                                  │
+│  RAG SYSTEM (With Retrieval):                                    │
+│  ├── Retrieves relevant chunks from Tesla PDFs                  │
+│  ├── Answers grounded in real documents                         │
+│  ├── Cites specific sources                                     │
+│  └── 37% lower hallucination risk                               │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Metrics Explained
+
+| Metric | What It Measures | Why It Matters |
+|--------|------------------|----------------|
+| **Answer Relevance** | Does the answer address the query? | Basic quality check |
+| **Faithfulness** | Is the answer grounded in retrieved context? | RAG's key advantage |
+| **Hallucination Risk** | Does the response contain fabricated info? | Critical for enterprise use |
+| **ROUGE-L** | Text overlap with source documents | Measures grounding quality |
+| **MRR** | Rank of first relevant retrieved document | Retriever effectiveness |
+
+---
+
 ### Key Findings
 
 #### Why RAG Reduces Hallucinations
