@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+sentence-transformers
+faiss-cpu
+groq
+python-dotenv
+PyJWT
+spacy
+transformers
+torch
+plotly
