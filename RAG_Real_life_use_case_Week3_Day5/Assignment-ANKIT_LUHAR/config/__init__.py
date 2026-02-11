@@ -1,0 +1,5 @@
+"""DP World RAG Chatbot — Configuration Package."""
+
+from config.settings import get_settings
+
+__all__ = ["get_settings"]

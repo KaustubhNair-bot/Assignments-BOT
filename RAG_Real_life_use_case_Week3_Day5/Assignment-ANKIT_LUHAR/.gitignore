@@ -1,0 +1,63 @@
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# Docker
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scraped data
+data/raw/
+data/processed/
+*.json.bak
+
+# Redis dump
+dump.rdb
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Misc
+*.bak
+*.tmp
+*.temp

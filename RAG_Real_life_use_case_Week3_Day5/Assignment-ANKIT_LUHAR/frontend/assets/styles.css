@@ -1,0 +1,158 @@
+/* ============================================================
+   DP World RAG Chatbot — Custom Streamlit Styles
+   Premium dark theme with DP World brand colours
+   ============================================================ */
+
+/* ── Global ─────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --dp-primary: #0066CC;
+    --dp-primary-light: #00AAFF;
+    --dp-accent: #00D4AA;
+    --dp-bg-dark: #0E1117;
+    --dp-bg-card: #1A1D23;
+    --dp-bg-hover: #262A33;
+    --dp-text: #E6E9EF;
+    --dp-text-muted: #8B95A5;
+    --dp-border: #2A2E37;
+    --dp-success: #10B981;
+    --dp-warning: #F59E0B;
+    --dp-error: #EF4444;
+    --dp-gradient: linear-gradient(135deg, var(--dp-primary) 0%, var(--dp-primary-light) 100%);
+}
+
+/* Force dark scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dp-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--dp-border);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dp-text-muted);
+}
+
+/* ── Streamlit Overrides ────────────────────────────────── */
+.stApp {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Chat message styling */
+.stChatMessage {
+    border-radius: 12px !important;
+    border: 1px solid var(--dp-border) !important;
+    padding: 1rem !important;
+    margin-bottom: 0.75rem !important;
+    transition: all 0.2s ease;
+}
+
+.stChatMessage:hover {
+    border-color: var(--dp-primary) !important;
+    box-shadow: 0 0 15px rgba(0, 102, 204, 0.1);
+}
+
+/* Chat input */
+.stChatInputContainer {
+    border-radius: 12px !important;
+    border: 2px solid var(--dp-border) !important;
+    transition: border-color 0.3s ease;
+}
+
+.stChatInputContainer:focus-within {
+    border-color: var(--dp-primary) !important;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+/* Buttons */
+.stButton > button {
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    border: 1px solid var(--dp-border) !important;
+}
+
+.stButton > button:hover {
+    border-color: var(--dp-primary) !important;
+    background: var(--dp-bg-hover) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    border-right: 1px solid var(--dp-border);
+}
+
+/* Expander */
+.streamlit-expanderHeader {
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+}
+
+/* Status indicators */
+.stSuccess {
+    border-radius: 8px !important;
+}
+
+.stError {
+    border-radius: 8px !important;
+}
+
+/* ── Custom Components ──────────────────────────────────── */
+.dp-header {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    border-bottom: 1px solid var(--dp-border);
+    margin-bottom: 1.5rem;
+}
+
+.dp-header h1 {
+    background: var(--dp-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+}
+
+.dp-header p {
+    color: var(--dp-text-muted);
+    font-size: 1.05rem;
+}
+
+.dp-source-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: var(--dp-bg-hover);
+    border: 1px solid var(--dp-border);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--dp-primary-light);
+    margin: 2px;
+}
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.stChatMessage {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.typing-indicator {
+    animation: pulse 1.5s ease-in-out infinite;
+    color: var(--dp-primary-light);
+}

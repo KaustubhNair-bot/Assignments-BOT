@@ -1,0 +1,53 @@
+# ============================================================
+# DP World RAG Chatbot - Python Dependencies
+# ============================================================
+
+# -- Web Framework --
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+# -- Data Validation --
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# -- LLM & AI --
+groq>=0.4.0
+cohere>=4.40
+tiktoken>=0.5.0
+
+# -- Vector Database --
+pinecone>=8.0.0
+
+# -- Web Scraping --
+beautifulsoup4>=4.12.0
+requests>=2.31.0
+lxml>=4.9.0
+aiohttp>=3.9.0
+
+# -- Caching --
+redis>=5.0.0
+
+# -- Logging --
+structlog>=23.2.0
+
+# -- Config --
+python-dotenv>=1.0.0
+
+# -- Utilities --
+tenacity>=8.2.0
+httpx>=0.25.0
+slowapi>=0.1.9
+
+# -- Frontend --
+streamlit>=1.29.0
+
+# -- Dev & Testing --
+pytest>=7.4.0
+pytest-asyncio>=0.23.0
+pytest-cov>=4.1.0
+pytest-mock>=3.12.0
+black>=23.12.0
+ruff>=0.1.9
+mypy>=1.8.0
+pre-commit>=3.6.0
