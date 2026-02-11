@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-10T22:58:12.412152",
+    "llm_provider": "local",
+    "vector_store": "local",
+    "num_queries": 5
+  },
+  "per_query_results": [
+    {
+      "query_id": 1,
+      "query": "What are the symptoms and treatment for a patient presenting with chest pain and shortness of breath after exercise?",
+      "metrics": {
+        "precision_at_5": 0.0,
+        "sim_with_top_doc": {
+          "rag": 0.0,
+          "base": 0.0
+        },
+        "rouge_proxy_f1": {
+          "rag": 0.0,
+          "base": 0.0
+        },
+        "answer_relevance": {
+          "rag": 1.0,
+          "base": 0.0
+        },
+        "faithfulness": {
+          "rag": 0.0,
+          "base": 0.0
+        }
+      },
+      "latency_seconds": {
+        "rag": 0.0,
+        "base": 0.0
+      },
+      "answers": {
+        "rag": "(local-llm RAG) Context snippet: \n\nAnswer: Based on the provided cases, What are the symptoms and treatment for a patient presenting with chest pain and shortness of breath after exercise?",
+        "base": "(local-llm) I don't have enough specific information to answer: Answer:"
+      },
+      "num_docs_retrieved": 0
+    },
+    {
+      "query_id": 2,
+      "query": "How should a sudden severe headache with blurred vision be diagnosed and managed?",
+      "metrics": {
+        "precision_at_5": 0.0,
+        "sim_with_top_doc": {
+          "rag": 0.0,
+          "base": 0.0
+        },
+        "rouge_proxy_f1": {
+          "rag": 0.0,
+          "base": 0.0
+        },
+        "answer_relevance": {
+          "rag": 1.0,
+          "base": 0.0
+        },
+        "faithfulness": {
+          "rag": 0.0,
+          "base": 0.0
+        }
+      },
+      "latency_seconds": {
+        "rag": 0.0,
+        "base": 0.0
+      },
+      "answers": {
+        "rag": "(local-llm RAG) Context snippet: \n\nAnswer: Based on the provided cases, How should a sudden severe headache with blurred vision be diagnosed and managed?",
+        "base": "(local-llm) I don't have enough specific information to answer: Answer:"
+      },
+      "num_docs_retrieved": 0
+    },
+    {
+      "query_id": 3,
+      "query": "What is the differential diagnosis for a persistent cough with blood-tinged sputum?",
+      "metrics": {
+        "precision_at_5": 0.0,
+        "sim_with_top_doc": {
+          "rag": 0.0,
+          "base": 0.0
+        },
+        "rouge_proxy_f1": {
+          "rag": 0.0,
+          "base": 0.0
+        },
+        "answer_relevance": {
+          "rag": 1.0,
+          "base": 0.0
+        },
+        "faithfulness": {
+          "rag": 0.0,
+          "base": 0.0
+        }
+      },
+      "latency_seconds": {
+        "rag": 0.0,
+        "base": 0.0
+      },
+      "answers": {
+        "rag": "(local-llm RAG) Context snippet: \n\nAnswer: Based on the provided cases, What is the differential diagnosis for a persistent cough with blood-tinged sputum?",
+        "base": "(local-llm) I don't have enough specific information to answer: Answer:"
+      },
+      "num_docs_retrieved": 0
+    },
+    {
+      "query_id": 4,
+      "query": "Describe the workup for a patient with abdominal pain after meals accompanied by nausea.",
+      "metrics": {
+        "precision_at_5": 0.0,
+        "sim_with_top_doc": {
+          "rag": 0.0,
+          "base": 0.0
+        },
+        "rouge_proxy_f1": {
+          "rag": 0.0,
+          "base": 0.0
+        },
+        "answer_relevance": {
+          "rag": 1.0,
+          "base": 0.0
+        },
+        "faithfulness": {
+          "rag": 0.0,
+          "base": 0.0
+        }
+      },
+      "latency_seconds": {
+        "rag": 0.0,
+        "base": 0.0
+      },
+      "answers": {
+        "rag": "(local-llm RAG) Context snippet: \n\nAnswer: Based on the provided cases, Describe the workup for a patient with abdominal pain after meals accompanied by nausea.",
+        "base": "(local-llm) I don't have enough specific information to answer: Answer:"
+      },
+      "num_docs_retrieved": 0
+    },
+    {
+      "query_id": 5,
+      "query": "What conditions should be considered in a young adult presenting with intermittent fever and joint pain?",
+      "metrics": {
+        "precision_at_5": 0.0,
+        "sim_with_top_doc": {
+          "rag": 0.0,
+          "base": 0.0
+        },
+        "rouge_proxy_f1": {
+          "rag": 0.0,
+          "base": 0.0
+        },
+        "answer_relevance": {
+          "rag": 1.0,
+          "base": 0.0
+        },
+        "faithfulness": {
+          "rag": 0.0,
+          "base": 0.0
+        }
+      },
+      "latency_seconds": {
+        "rag": 0.0,
+        "base": 0.0
+      },
+      "answers": {
+        "rag": "(local-llm RAG) Context snippet: \n\nAnswer: Based on the provided cases, What conditions should be considered in a young adult presenting with intermittent fever and joint pain?",
+        "base": "(local-llm) I don't have enough specific information to answer: Answer:"
+      },
+      "num_docs_retrieved": 0
+    }
+  ],
+  "average_metrics": {
+    "precision_at_5": 0.0,
+    "sim_with_top_doc": {
+      "rag": 0.0,
+      "base": 0.0
+    },
+    "rouge_proxy_f1": {
+      "rag": 0.0,
+      "base": 0.0
+    },
+    "answer_relevance": {
+      "rag": 1.0,
+      "base": 0.0
+    },
+    "faithfulness": {
+      "rag": 0.0,
+      "base": 0.0
+    }
+  }
+}

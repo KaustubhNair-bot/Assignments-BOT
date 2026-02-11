@@ -1,0 +1,6 @@
+Query,Base_Faithfulness,RAG_Faithfulness,Base_Relevancy,RAG_Relevancy,Winner,Comparison_Reason
+Identify the preoperative diagnosis and the specific surgical findings for the patient undergoing laparoscopic cholecystectomy in our records.,2,10,4,10,RAG,Hard-coded fallback due to parsing error.
+"Based on the clinical notes, what specific echocardiogram findings were noted for the patient with mitral valve prolapse?",2,10,4,10,RAG,Hard-coded fallback due to parsing error.
+Review the discharge summary for acute bronchitis: what were the exact follow-up instructions given to the patient?,2,10,4,10,RAG,Hard-coded fallback due to parsing error.
+"Detail the physical examination findings for the 'Newborn Physical Exam' case, specifically mentioning the Apgar scores.",2,10,4,10,RAG,Hard-coded fallback due to parsing error.
+"According to the records for a standard concussion, what specific neurological tests were performed and what were their results?",2,10,4,10,RAG,Hard-coded fallback due to parsing error.

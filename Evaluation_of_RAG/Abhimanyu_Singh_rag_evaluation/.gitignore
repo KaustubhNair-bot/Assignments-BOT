@@ -1,0 +1,26 @@
+# --- Security & Credentials ---
+.env
+*.pem
+*.key
+
+# --- Local Databases & Large Data ---
+chroma_db/
+chromadb_store/
+faiss_index/
+data/*.csv
+data/*.zip
+
+# --- Python Environment ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.env.local
+
+# --- OS & IDE Specific ---
+.DS_Store
+.vscode/
+.idea/
+*.swp
