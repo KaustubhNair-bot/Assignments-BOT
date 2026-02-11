@@ -1,0 +1,1 @@
+This folder is to submit the assignment RAG Real life use case Week 3 Day 5 dated: 11th Feb.
