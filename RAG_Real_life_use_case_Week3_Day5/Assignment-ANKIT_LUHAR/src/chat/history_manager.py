@@ -1,8 +1,4 @@
-"""
-DP World RAG Chatbot — History Manager.
 
-Manages per-session conversation history with a sliding window.
-"""
 
 from __future__ import annotations
 
@@ -45,7 +41,7 @@ class HistoryManager:
         history = self._get_history(session_id)
         history.append(msg)
 
-        # Enforce sliding window
+
         if len(history) > self.max_turns * 2:
             history = history[-(self.max_turns * 2) :]
 
@@ -89,7 +85,7 @@ class HistoryManager:
                 return msg.content
         return None
 
-    # ── Storage ─────────────────────────────────────────────
+
     def _get_history(self, session_id: str) -> list[ChatMessage]:
         if self._redis:
             return self._load_redis(session_id)
@@ -104,7 +100,7 @@ class HistoryManager:
     def _load_redis(self, session_id: str) -> list[ChatMessage]:
         key = f"dpw:history:{session_id}"
         try:
-            data = self._redis.get(key)  # type: ignore[union-attr]
+            data = self._redis.get(key)  
             if data:
                 return [ChatMessage(**m) for m in json.loads(data)]
         except Exception:
@@ -115,6 +111,6 @@ class HistoryManager:
         key = f"dpw:history:{session_id}"
         try:
             data = json.dumps([asdict(m) for m in history])
-            self._redis.setex(key, 86400, data)  # type: ignore[union-attr]
+            self._redis.setex(key, 86400, data)  
         except Exception as exc:
             logger.error("history_save_error", error=str(exc))

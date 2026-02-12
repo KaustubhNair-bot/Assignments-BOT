@@ -1,6 +1,4 @@
-"""
-DP World RAG Chatbot — Global Error Handler.
-"""
+
 
 from __future__ import annotations
 

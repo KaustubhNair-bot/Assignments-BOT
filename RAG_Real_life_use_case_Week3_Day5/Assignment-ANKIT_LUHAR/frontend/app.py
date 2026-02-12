@@ -1,8 +1,3 @@
-"""
-DP World RAG Chatbot — Streamlit Frontend.
-
-Premium chat interface with Mock Login gate and RAG transparency.
-"""
 
 from __future__ import annotations
 
@@ -10,9 +5,7 @@ import hashlib
 import os
 import sys
 
-# ── Ensure project root is on sys.path ──────────────────────
-# This allows `streamlit run frontend/app.py` from the project root
-# to resolve imports like `config.*`, `src.*`, and `frontend.*`.
+
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
@@ -23,7 +16,7 @@ import streamlit as st
 from frontend.components.chat_widget import render_chat
 from frontend.components.sidebar import render_sidebar
 
-# ── Page Configuration ──────────────────────────────────────
+
 st.set_page_config(
     page_title="DP World Assistant",
     page_icon="🚢",
@@ -31,8 +24,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ── Mock User Credentials ──────────────────────────────────
-# In production, replace with actual auth (OAuth2, LDAP, etc.)
+
 MOCK_USERS = {
     "admin": hashlib.sha256("dpworld2026".encode()).hexdigest(),
     "analyst": hashlib.sha256("logistics123".encode()).hexdigest(),
@@ -40,7 +32,7 @@ MOCK_USERS = {
 }
 
 
-# ── Load Custom CSS ─────────────────────────────────────────
+
 def load_css() -> None:
     """Load custom CSS styles."""
     try:
@@ -50,7 +42,7 @@ def load_css() -> None:
         pass
 
 
-# ── Mock Login Gate ─────────────────────────────────────────
+
 def render_login() -> bool:
     """
     Render a mock login page. Returns True if authenticated.
@@ -75,7 +67,7 @@ def render_login() -> bool:
     </div>
     """, unsafe_allow_html=True)
 
-    # Center the login form
+
     col1, col2, col3 = st.columns([1, 2, 1])
 
     with col2:
@@ -117,7 +109,7 @@ def render_login() -> bool:
             else:
                 st.error("❌ User not found")
 
-        # Show demo credentials
+
         st.markdown("---")
         st.markdown("""
         <div style="
@@ -145,7 +137,7 @@ def main() -> None:
     """Main Streamlit application."""
     load_css()
 
-    # ── Initialize Session State ────────────────────────────
+
     if "messages" not in st.session_state:
         st.session_state.messages = []
     if "session_id" not in st.session_state:
@@ -165,15 +157,15 @@ def main() -> None:
     if "pending_question" not in st.session_state:
         st.session_state.pending_question = None
 
-    # ── Login Gate ──────────────────────────────────────────
+
     if not st.session_state.authenticated:
         render_login()
         return
 
-    # ── Sidebar ─────────────────────────────────────────────
+
     render_sidebar()
 
-    # ── Main Chat Area ──────────────────────────────────────
+
     render_chat()
 
 

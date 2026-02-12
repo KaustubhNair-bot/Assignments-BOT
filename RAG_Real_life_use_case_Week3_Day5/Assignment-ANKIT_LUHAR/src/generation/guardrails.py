@@ -1,8 +1,3 @@
-"""
-DP World RAG Chatbot — Guardrails.
-
-Safety checks, hallucination prevention, and content filtering.
-"""
 
 from __future__ import annotations
 
@@ -27,7 +22,7 @@ class GuardrailResult:
 class Guardrails:
     """Apply safety guardrails to inputs and outputs."""
 
-    # Patterns that indicate prompt injection attempts
+
     INJECTION_PATTERNS = [
         r"(?i)ignore\s+(previous|all|above)\s+(instructions?|prompts?)",
         r"(?i)you\s+are\s+now\s+(?:a\s+)?(?:different|new)",
@@ -38,13 +33,13 @@ class Guardrails:
         r"(?i)reveal\s+your\s+(?:system|instructions?|prompt)",
     ]
 
-    # Topics that are off-limits for the chatbot
+
     OFF_TOPIC_KEYWORDS = [
         "politics", "religion", "violence", "weapons",
         "illegal", "hack", "exploit", "malware",
     ]
 
-    # Maximum response length
+
     MAX_RESPONSE_LENGTH = 5000
 
     def check_input(self, user_message: str) -> GuardrailResult:
@@ -56,18 +51,18 @@ class Guardrails:
         - Off-topic content
         - Malicious patterns
         """
-        # Check for empty input
+
         if not user_message or not user_message.strip():
             return GuardrailResult(is_safe=False, reason="Empty message")
 
-        # Check message length
+
         if len(user_message) > 2000:
             return GuardrailResult(
                 is_safe=False,
                 reason="Message too long. Please keep your question under 2000 characters.",
             )
 
-        # Check for prompt injection
+
         for pattern in self.INJECTION_PATTERNS:
             if re.search(pattern, user_message):
                 logger.warning("prompt_injection_detected", pattern=pattern)
@@ -107,10 +102,10 @@ class Guardrails:
                     reason="Response contained potential system information leakage",
                 )
 
-        # Truncate if too long
+
         if len(response) > self.MAX_RESPONSE_LENGTH:
             truncated = response[: self.MAX_RESPONSE_LENGTH]
-            # Try to end at sentence boundary
+
             last_period = truncated.rfind(".")
             if last_period > self.MAX_RESPONSE_LENGTH * 0.7:
                 truncated = truncated[: last_period + 1]
@@ -129,9 +124,9 @@ class Guardrails:
         LLM-as-judge approach.
         """
         if not context:
-            return True  # No context to compare against
+            return True  
 
-        # Extract key terms from context (simple TF approach)
+
         context_words = set(
             w.lower() for w in re.findall(r"\b\w{4,}\b", context)
         )
@@ -145,7 +140,7 @@ class Guardrails:
         overlap = len(context_words & response_words)
         overlap_ratio = overlap / max(len(context_words), 1)
 
-        # If less than 5% word overlap, flag as potentially hallucinated
+
         if overlap_ratio < 0.05:
             logger.warning(
                 "low_relevance_score",

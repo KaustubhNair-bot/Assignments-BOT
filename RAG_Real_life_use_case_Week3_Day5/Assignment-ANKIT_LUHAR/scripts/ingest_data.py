@@ -1,13 +1,4 @@
 #!/usr/bin/env python3
-"""
-DP World RAG Chatbot — Data Ingestion Script.
-
-Loads scraped documents, chunks them, generates embeddings,
-and upserts vectors into Pinecone.
-
-Usage:
-    python scripts/ingest_data.py [--data-dir data/raw] [--chunk-size 512]
-"""
 
 from __future__ import annotations
 

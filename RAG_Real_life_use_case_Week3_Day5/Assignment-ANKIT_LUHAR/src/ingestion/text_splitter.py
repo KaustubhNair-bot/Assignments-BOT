@@ -1,10 +1,4 @@
-"""
-DP World RAG Chatbot — Text Splitter.
 
-Splits documents into semantically coherent chunks with configurable
-size and overlap.  Uses a recursive strategy that respects paragraph
-and sentence boundaries.
-"""
 
 from __future__ import annotations
 
@@ -78,7 +72,7 @@ class TextSplitter:
             return [text.strip()] if text.strip() else []
 
         if not separators:
-            # Hard split if no separators remain
+
             return self._hard_split(text)
 
         sep = separators[0]
@@ -97,7 +91,7 @@ class TextSplitter:
                 if current:
                     chunks.append(current.strip())
                 if len(part) > self.chunk_size:
-                    # Recursively split the oversized part
+
                     sub_chunks = self._recursive_split(part, remaining_seps)
                     chunks.extend(sub_chunks)
                     current = ""
@@ -107,7 +101,7 @@ class TextSplitter:
         if current and current.strip():
             chunks.append(current.strip())
 
-        # Apply overlap
+
         return self._apply_overlap(chunks)
 
     def _hard_split(self, text: str) -> list[str]:
@@ -132,7 +126,7 @@ class TextSplitter:
             prev = chunks[i - 1]
             overlap_text = prev[-self.chunk_overlap :] if len(prev) > self.chunk_overlap else prev
             merged = f"{overlap_text} {chunks[i]}"
-            # Only add overlap if it doesn't exceed max size
+
             if len(merged) <= self.chunk_size * 1.2:
                 result.append(merged.strip())
             else:

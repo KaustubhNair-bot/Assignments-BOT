@@ -1,8 +1,4 @@
-"""
-DP World RAG Chatbot — Feedback Handler.
 
-Collects and stores user feedback on chatbot responses.
-"""
 
 from __future__ import annotations
 
@@ -25,7 +21,7 @@ class Feedback:
     feedback_id: str = field(default_factory=lambda: str(uuid.uuid4()))
     session_id: str = ""
     message_id: str = ""
-    rating: int = 0  # 1-5 stars, or -1/+1 thumbs
+    rating: int = 0  
     comment: str = ""
     query: str = ""
     response: str = ""

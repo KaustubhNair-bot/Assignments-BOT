@@ -1,8 +1,3 @@
-"""
-DP World RAG Chatbot — Document Loader.
-
-Loads scraped JSON documents into a normalised in-memory representation.
-"""
 
 from __future__ import annotations
 

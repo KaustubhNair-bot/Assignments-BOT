@@ -1,8 +1,3 @@
-"""
-DP World RAG Chatbot — Sitemap Parser.
-
-Parses sitemap.xml files to discover URLs for scraping.
-"""
 
 from __future__ import annotations
 
@@ -31,7 +26,7 @@ class SitemapParser:
         self.session = requests.Session()
         self.session.headers.update({"User-Agent": self.user_agent})
 
-    # ── public API ──────────────────────────────────────────
+
     def get_urls(self, max_urls: Optional[int] = None) -> list[str]:
         """Return a deduplicated list of page URLs found in the sitemap."""
         sitemap_url = f"{self.base_url}/sitemap.xml"
@@ -42,7 +37,7 @@ class SitemapParser:
         logger.info("sitemap_parsed", url_count=len(unique))
         return unique
 
-    # ── internals ───────────────────────────────────────────
+
     def _fetch_xml(self, url: str) -> Optional[ElementTree.Element]:
         """Fetch and parse XML from a URL."""
         try:

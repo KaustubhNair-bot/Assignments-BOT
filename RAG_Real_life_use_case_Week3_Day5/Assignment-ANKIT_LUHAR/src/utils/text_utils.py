@@ -1,8 +1,3 @@
-"""
-DP World RAG Chatbot — Text Utilities.
-
-Common text processing functions used across modules.
-"""
 
 from __future__ import annotations
 

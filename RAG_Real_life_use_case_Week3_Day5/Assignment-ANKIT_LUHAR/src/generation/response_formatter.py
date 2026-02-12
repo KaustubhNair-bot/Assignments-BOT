@@ -1,8 +1,4 @@
-"""
-DP World RAG Chatbot — Response Formatter.
 
-Cleans, sanitises, and enriches LLM responses before sending to the user.
-"""
 
 from __future__ import annotations
 
@@ -40,10 +36,10 @@ class ResponseFormatter:
         str
             Formatted response.
         """
-        # Clean up the response
+
         cleaned = self._clean_response(response)
 
-        # Append sources if available
+
         if include_sources and sources:
             source_section = self._format_sources(sources)
             cleaned = f"{cleaned}\n\n{source_section}"
@@ -53,7 +49,7 @@ class ResponseFormatter:
     @staticmethod
     def _clean_response(text: str) -> str:
         """Remove artifacts and normalise formatting."""
-        # Remove potential system prompt leakage
+
         patterns_to_remove = [
             r"(?i)^(as an ai|as a language model|i am an ai).*?\n",
             r"(?i)^(system|instructions?|context):.*?\n",
@@ -61,7 +57,7 @@ class ResponseFormatter:
         for pattern in patterns_to_remove:
             text = re.sub(pattern, "", text)
 
-        # Remove excessive whitespace
+
         text = re.sub(r"\n{3,}", "\n\n", text)
         text = text.strip()
 
@@ -75,7 +71,7 @@ class ResponseFormatter:
 
         lines = ["---", "📚 **Sources:**"]
         for i, url in enumerate(sources[:5], 1):  # Limit to 5 sources
-            # Extract a readable label from the URL
+
             label = url.rstrip("/").split("/")[-1].replace("-", " ").title()
             if not label or label == "Www.Dpworld.Com":
                 label = "DP World"
@@ -90,7 +86,7 @@ class ResponseFormatter:
             return text
 
         truncated = text[:max_length]
-        # Try to end at a sentence boundary
+
         last_period = truncated.rfind(".")
         last_newline = truncated.rfind("\n")
         cut_point = max(last_period, last_newline)

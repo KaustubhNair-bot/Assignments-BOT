@@ -1,8 +1,4 @@
-"""
-DP World RAG Chatbot — Groq API Client.
 
-Thin wrapper around the Groq SDK for LLM completions.
-"""
 
 from __future__ import annotations
 
@@ -69,7 +65,7 @@ class GroqClient:
             response = self.client.chat.completions.create(**kwargs)
 
             if stream:
-                # Collect stream into full text
+
                 chunks = []
                 for chunk in response:
                     delta = chunk.choices[0].delta

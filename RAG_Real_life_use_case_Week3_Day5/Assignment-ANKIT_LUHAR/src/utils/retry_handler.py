@@ -1,8 +1,4 @@
-"""
-DP World RAG Chatbot — Retry Handler.
 
-Provides retry logic with exponential backoff using tenacity.
-"""
 
 from __future__ import annotations
 
@@ -102,4 +98,4 @@ def retry_api_call(func: Callable, *args: Any, max_attempts: int = 3, **kwargs: 
                 )
                 time.sleep(wait_time)
 
-    raise last_exc  # type: ignore[misc]
+    raise last_exc  

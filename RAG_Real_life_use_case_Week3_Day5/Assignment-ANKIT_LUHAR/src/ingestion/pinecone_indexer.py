@@ -1,8 +1,4 @@
-"""
-DP World RAG Chatbot — Pinecone Indexer.
 
-Manages the Pinecone serverless index: creation, upserting, and stats.
-"""
 
 from __future__ import annotations
 
@@ -30,7 +26,7 @@ class PineconeIndexer:
         self.dimension = COHERE_EMBED_DIMENSION
         self._index = None
 
-    # ── Public API ──────────────────────────────────────────
+
     def create_index(self, metric: str = "cosine") -> None:
         """Create the Pinecone index if it doesn't exist."""
         existing = [idx.name for idx in self.pc.list_indexes()]
@@ -46,7 +42,7 @@ class PineconeIndexer:
             spec=ServerlessSpec(cloud=self.cloud, region=self.region),
         )
 
-        # Wait until index is ready
+
         while not self.pc.describe_index(self.index_name).status["ready"]:
             logger.info("waiting_for_index")
             time.sleep(2)

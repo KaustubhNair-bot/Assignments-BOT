@@ -1,9 +1,3 @@
-"""
-DP World RAG Chatbot — Context Builder.
-
-Assembles retrieved documents into a coherent context string for the LLM,
-respecting token limits.
-"""
 
 from __future__ import annotations
 
@@ -50,7 +44,7 @@ class ContextBuilder:
         token_count = 0
 
         for idx, result in enumerate(results, 1):
-            # Format each passage
+
             title = result.metadata.get("title", "Untitled")
             source_url = result.metadata.get("source_url", "")
 
@@ -59,10 +53,10 @@ class ContextBuilder:
                 f"{result.text}\n"
             )
 
-            # Check token budget
+
             passage_tokens = self._count_tokens(passage)
             if token_count + passage_tokens > self.max_tokens:
-                # Try to fit a truncated version
+
                 remaining = self.max_tokens - token_count
                 if remaining > 100:
                     passage = self._truncate_to_tokens(passage, remaining)

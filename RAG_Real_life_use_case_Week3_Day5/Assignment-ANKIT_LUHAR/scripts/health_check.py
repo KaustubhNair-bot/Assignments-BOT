@@ -1,13 +1,4 @@
 #!/usr/bin/env python3
-"""
-DP World RAG Chatbot — Health Check Script.
-
-Checks the health of all services.
-
-Usage:
-    python scripts/health_check.py [--api-url http://localhost:8000]
-"""
-
 from __future__ import annotations
 
 import argparse

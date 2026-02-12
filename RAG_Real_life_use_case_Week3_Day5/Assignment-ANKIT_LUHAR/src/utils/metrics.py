@@ -1,8 +1,3 @@
-"""
-DP World RAG Chatbot — Custom Metrics.
-
-Simple in-memory metrics collection for monitoring.
-"""
 
 from __future__ import annotations
 

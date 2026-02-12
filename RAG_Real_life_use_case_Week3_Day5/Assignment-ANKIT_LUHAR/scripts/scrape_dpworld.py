@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""
-DP World RAG Chatbot — Scraper Script.
 
-Usage:
-    python scripts/scrape_dpworld.py [--max-pages 100] [--output-dir data/raw]
-"""
 
 from __future__ import annotations
 

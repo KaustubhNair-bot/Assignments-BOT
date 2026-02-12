@@ -1,6 +1,4 @@
-"""
-DP World RAG Chatbot — Request/Response Logger Middleware.
-"""
+
 
 from __future__ import annotations
 

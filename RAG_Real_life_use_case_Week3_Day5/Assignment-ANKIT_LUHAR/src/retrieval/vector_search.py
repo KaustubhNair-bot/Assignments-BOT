@@ -1,8 +1,3 @@
-"""
-DP World RAG Chatbot — Vector Search.
-
-Performs similarity search against the Pinecone vector index.
-"""
 
 from __future__ import annotations
 

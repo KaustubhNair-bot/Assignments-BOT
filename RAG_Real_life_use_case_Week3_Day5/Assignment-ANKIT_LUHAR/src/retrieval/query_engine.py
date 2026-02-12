@@ -1,8 +1,4 @@
-"""
-DP World RAG Chatbot — Query Engine.
 
-Orchestrates the full retrieval pipeline: search → rerank → build context.
-"""
 
 from __future__ import annotations
 
@@ -54,7 +50,7 @@ class QueryEngine:
             ``sources``: source URLs.
             ``results``: raw search results (dicts).
         """
-        # Check cache
+
         if use_cache and self._redis:
             cached = self._get_cached(query)
             if cached:
@@ -86,14 +82,14 @@ class QueryEngine:
 
         return output
 
-    # ── Cache helpers ───────────────────────────────────────
+
     def _cache_key(self, query: str) -> str:
         h = hashlib.sha256(query.lower().strip().encode()).hexdigest()[:16]
         return f"{CACHE_PREFIX_QUERY}{h}"
 
     def _get_cached(self, query: str) -> Optional[dict]:
         try:
-            data = self._redis.get(self._cache_key(query))  # type: ignore[union-attr]
+            data = self._redis.get(self._cache_key(query))  
             if data:
                 return json.loads(data)
         except Exception:
@@ -102,7 +98,7 @@ class QueryEngine:
 
     def _set_cached(self, query: str, value: dict) -> None:
         try:
-            self._redis.setex(  # type: ignore[union-attr]
+            self._redis.setex(  
                 self._cache_key(query),
                 self._cache_ttl,
                 json.dumps(value),

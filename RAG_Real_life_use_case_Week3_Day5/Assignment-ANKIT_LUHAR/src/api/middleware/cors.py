@@ -1,6 +1,3 @@
-"""
-DP World RAG Chatbot — CORS Configuration.
-"""
 
 from __future__ import annotations
 

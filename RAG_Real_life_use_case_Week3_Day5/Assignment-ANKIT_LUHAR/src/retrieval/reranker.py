@@ -1,9 +1,3 @@
-"""
-DP World RAG Chatbot — Reranker.
-
-Uses Cohere Rerank to re-score and re-order retrieved documents
-for improved relevance.
-"""
 
 from __future__ import annotations
 
@@ -84,5 +78,5 @@ class Reranker:
 
         except Exception as exc:
             logger.error("reranking_failed", error=str(exc))
-            # Fall back to original ranking
+
             return results[:top_n]

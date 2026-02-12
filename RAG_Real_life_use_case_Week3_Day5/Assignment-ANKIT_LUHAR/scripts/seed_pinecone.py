@@ -1,13 +1,6 @@
 #!/usr/bin/env python3
-"""
-DP World RAG Chatbot — Seed Pinecone Index.
 
-Creates the Pinecone index if it doesn't exist.
-
-Usage:
-    python scripts/seed_pinecone.py
-"""
-
+\
 from __future__ import annotations
 
 import sys

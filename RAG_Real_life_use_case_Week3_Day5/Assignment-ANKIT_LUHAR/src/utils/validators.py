@@ -1,8 +1,4 @@
-"""
-DP World RAG Chatbot — Input Validators.
 
-Validation helpers for API inputs and user messages.
-"""
 
 from __future__ import annotations
 
@@ -69,5 +65,5 @@ def validate_top_k(top_k: int) -> int:
 
 def sanitize_input(text: str) -> str:
     """Basic input sanitisation — remove control characters."""
-    # Remove non-printable characters except newlines and tabs
+
     return re.sub(r"[^\x20-\x7E\n\t\u00A0-\uFFFF]", "", text)

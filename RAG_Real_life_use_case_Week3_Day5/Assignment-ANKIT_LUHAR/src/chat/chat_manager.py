@@ -1,14 +1,4 @@
-"""
-DP World RAG Chatbot — Chat Manager.
 
-Main orchestrator that ties retrieval, generation, guardrails, 
-and session management together into a single chat flow.
-
-Supports:
-- Chain-of-Thought (CoT) prompting
-- Configurable temperature & top_p (generation parameters)
-- Returning retrieved chunks for UI transparency
-"""
 
 from __future__ import annotations
 
@@ -210,14 +200,14 @@ class ChatManager:
         """Build the LLM messages list with system prompt, history, and context."""
         messages = [{"role": SYSTEM_ROLE, "content": SYSTEM_PROMPT}]
 
-        # Add conversation history (excluding the current message)
+
         history = self.history_manager.get_messages_for_llm(session_id)
-        # Exclude the last message as we'll add it in the user prompt
+
         if history and history[-1]["role"] == USER_ROLE:
             history = history[:-1]
         messages.extend(history)
 
-        # Build user prompt with context (CoT-enhanced templates)
+
         if context:
             formatted_history = self.history_manager.get_formatted_history(
                 session_id, last_n=3

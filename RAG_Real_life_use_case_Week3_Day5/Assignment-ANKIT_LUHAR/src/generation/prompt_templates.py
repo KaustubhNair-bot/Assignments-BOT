@@ -1,13 +1,8 @@
-"""
-DP World RAG Chatbot — Prompt Templates.
 
-All prompt templates used for LLM interactions.
-Includes strict Brand Voice persona and Chain-of-Thought (CoT) reasoning.
-"""
 
 from __future__ import annotations
 
-# ── System Prompt — STRICT BRAND VOICE PERSONA ──────────────
+
 SYSTEM_PROMPT = """You are **DP World Senior Logistics Consultant AI**, the official AI assistant for **DP World** — one of the world's leading smart end-to-end supply chain logistics providers headquartered in Dubai, UAE.
 
 ## 🎯 Your Persona — DP World Brand Voice
@@ -44,7 +39,7 @@ Format your response as:
 - Always end with a follow-up question or offer for further assistance.
 """
 
-# ── RAG Query Prompt with CoT ──────────────────────────────
+
 RAG_QUERY_TEMPLATE = """## Retrieved Context
 The following information was retrieved from DP World's official knowledge base:
 
@@ -63,7 +58,7 @@ You MUST follow this reasoning process:
 If the context is insufficient, clearly state what information is available and what is missing. Do NOT hallucinate or make up information.
 """
 
-# ── Conversation-Aware Query with CoT ──────────────────────
+
 CONVERSATION_RAG_TEMPLATE = """## Retrieved Context
 The following information was retrieved from DP World's official knowledge base:
 
@@ -84,7 +79,7 @@ The following information was retrieved from DP World's official knowledge base:
 Base your answer strictly on the retrieved context. If the context doesn't contain the answer, say so clearly.
 """
 
-# ── Query Reformulation ─────────────────────────────────────
+
 QUERY_REFORMULATION_TEMPLATE = """Given the following conversation history and the latest user question, reformulate the question to be a standalone, search-optimised query.
 
 ## Conversation History
@@ -99,7 +94,7 @@ QUERY_REFORMULATION_TEMPLATE = """Given the following conversation history and t
 - Return ONLY the reformulated question, nothing else.
 """
 
-# ── Guardrail Check Prompt ──────────────────────────────────
+
 GUARDRAIL_CHECK_TEMPLATE = """Evaluate whether the following AI response is appropriate.
 
 ## Response
@@ -114,7 +109,7 @@ Answer with a JSON object:
 {{"safe": true/false, "reason": "explanation if unsafe"}}
 """
 
-# ── No-Context Fallback ─────────────────────────────────────
+
 NO_CONTEXT_RESPONSE = (
     "> **🔍 Retrieval Analysis:** No relevant information was found in the current knowledge base for this query.\n"
     "> **✅ Relevance:** Unable to provide a context-grounded answer.\n\n"
@@ -127,7 +122,7 @@ NO_CONTEXT_RESPONSE = (
     "Is there anything else about DP World's services I can help with?"
 )
 
-# ── Welcome Message ─────────────────────────────────────────
+
 WELCOME_MESSAGE = (
     "👋 Welcome to **DP World Assistant**!\n\n"
     "I'm your AI-powered **Senior Logistics Consultant**, here to help with "
@@ -143,7 +138,7 @@ WELCOME_MESSAGE = (
     "How can I assist you today?"
 )
 
-# ── Generation Parameter Presets ────────────────────────────
+
 GENERATION_PRESETS = {
     "factual": {
         "temperature": 0.0,

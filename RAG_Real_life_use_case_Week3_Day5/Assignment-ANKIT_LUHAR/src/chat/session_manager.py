@@ -1,8 +1,3 @@
-"""
-DP World RAG Chatbot — Session Manager.
-
-Manages conversation sessions and their lifecycle.
-"""
 
 from __future__ import annotations
 
@@ -92,18 +87,18 @@ class SessionManager:
             return self._list_redis_sessions()
         return list(self._local_sessions.values())
 
-    # ── Redis helpers ───────────────────────────────────────
+
     def _save_to_redis(self, session: Session) -> None:
         key = f"{CACHE_PREFIX_SESSION}{session.session_id}"
         try:
-            self._redis.setex(key, self._ttl, json.dumps(asdict(session)))  # type: ignore[union-attr]
+            self._redis.setex(key, self._ttl, json.dumps(asdict(session)))  
         except Exception as exc:
             logger.error("session_save_error", error=str(exc))
 
     def _load_from_redis(self, session_id: str) -> Optional[Session]:
         key = f"{CACHE_PREFIX_SESSION}{session_id}"
         try:
-            data = self._redis.get(key)  # type: ignore[union-attr]
+            data = self._redis.get(key)  
             if data:
                 return Session(**json.loads(data))
         except Exception as exc:
@@ -113,10 +108,10 @@ class SessionManager:
     def _list_redis_sessions(self) -> list[Session]:
         try:
             pattern = f"{CACHE_PREFIX_SESSION}*"
-            keys = self._redis.keys(pattern)  # type: ignore[union-attr]
+            keys = self._redis.keys(pattern)  
             sessions = []
             for key in keys:
-                data = self._redis.get(key)  # type: ignore[union-attr]
+                data = self._redis.get(key)  
                 if data:
                     sessions.append(Session(**json.loads(data)))
             return sessions

@@ -1,8 +1,4 @@
-"""
-DP World RAG Chatbot — Rate Limiter Middleware.
 
-Uses slowapi for request rate limiting.
-"""
 
 from __future__ import annotations
 

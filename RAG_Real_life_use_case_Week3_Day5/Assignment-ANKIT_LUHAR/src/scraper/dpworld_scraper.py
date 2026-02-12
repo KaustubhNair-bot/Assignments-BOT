@@ -1,8 +1,4 @@
-"""
-DP World RAG Chatbot — Main Web Scraper.
 
-Crawls dpworld.com pages, cleans HTML, and stores structured documents.
-"""
 
 from __future__ import annotations
 
@@ -67,7 +63,7 @@ class DPWorldScraper:
         self._visited: set[str] = set()
         self._documents: list[ScrapedDocument] = []
 
-    # ── Public API ──────────────────────────────────────────
+
     def scrape(self) -> list[ScrapedDocument]:
         """Run the full scraping pipeline. Returns scraped documents."""
         logger.info("scraper_started", base_url=self.base_url, max_pages=self.max_pages)
@@ -103,7 +99,7 @@ class DPWorldScraper:
         """Scrape a single URL."""
         return self._scrape_page(url)
 
-    # ── Internals ───────────────────────────────────────────
+
     def _scrape_page(self, url: str) -> Optional[ScrapedDocument]:
         """Fetch and clean a single page."""
         self._visited.add(url)
@@ -151,7 +147,7 @@ class DPWorldScraper:
         ext = os.path.splitext(parsed.path)[1].lower()
         if ext in SKIP_EXTENSIONS:
             return True
-        # Stay on the same domain
+
         base_domain = urlparse(self.base_url).netloc
         if parsed.netloc and parsed.netloc != base_domain:
             return True

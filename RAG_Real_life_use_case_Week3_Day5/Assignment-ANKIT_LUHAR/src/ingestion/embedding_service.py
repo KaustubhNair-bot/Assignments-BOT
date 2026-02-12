@@ -1,8 +1,4 @@
-"""
-DP World RAG Chatbot — Embedding Service.
 
-Generates vector embeddings via the Cohere API.
-"""
 
 from __future__ import annotations
 
@@ -66,11 +62,11 @@ class EmbeddingService:
                         batch_index=i // self._batch_size,
                         batch_size=len(batch),
                     )
-                    break  # success
+                    break  
                 except Exception as exc:
                     error_str = str(exc)
                     if "429" in error_str or "rate" in error_str.lower():
-                        wait_time = 2 ** attempt * 15  # 30s, 60s, 120s...
+                        wait_time = 2 ** attempt * 15  
                         logger.warning(
                             "rate_limited",
                             batch_start=i,
@@ -90,7 +86,7 @@ class EmbeddingService:
                         )
                         break
 
-            # Rate limit delay between batches
+
             if i + self._batch_size < len(texts):
                 time.sleep(2)
 
@@ -98,7 +94,7 @@ class EmbeddingService:
 
     def embed_query(self, query: str) -> list[float]:
         """Embed a single query string (uses ``search_query`` input type)."""
-        # Check cache first
+
         cache_key = self._cache_key(query)
         if self._redis:
             cached = self._get_cached(cache_key)
@@ -109,7 +105,7 @@ class EmbeddingService:
         embeddings = self.embed_texts([query], input_type="search_query")
         result = embeddings[0]
 
-        # Cache the result
+
         if self._redis:
             self._set_cached(cache_key, result)
 
@@ -122,7 +118,7 @@ class EmbeddingService:
 
         vectors = []
         for chunk, embedding in zip(chunks, embeddings):
-            # Sanitize metadata: Pinecone rejects None values
+
             clean_meta = {}
             for k, v in chunk.metadata.items():
                 if v is None:
@@ -133,7 +129,7 @@ class EmbeddingService:
                     clean_meta[k] = [str(item) for item in v]
                 else:
                     clean_meta[k] = str(v)
-            clean_meta["text"] = chunk.text[:1000]  # Store truncated text
+            clean_meta["text"] = chunk.text[:1000]  
 
             vectors.append({
                 "id": chunk.chunk_id,
@@ -144,7 +140,7 @@ class EmbeddingService:
         logger.info("chunks_embedded", count=len(vectors))
         return vectors
 
-    # ── Cache helpers ───────────────────────────────────────
+
     @staticmethod
     def _cache_key(text: str) -> str:
         h = hashlib.sha256(text.encode()).hexdigest()[:16]
@@ -152,7 +148,7 @@ class EmbeddingService:
 
     def _get_cached(self, key: str) -> Optional[list[float]]:
         try:
-            data = self._redis.get(key)  # type: ignore[union-attr]
+            data = self._redis.get(key)  
             if data:
                 return json.loads(data)
         except Exception:
@@ -162,6 +158,6 @@ class EmbeddingService:
     def _set_cached(self, key: str, value: list[float]) -> None:
         try:
             settings = get_settings()
-            self._redis.setex(key, settings.redis_ttl, json.dumps(value))  # type: ignore[union-attr]
+            self._redis.setex(key, settings.redis_ttl, json.dumps(value))  
         except Exception:
             pass
