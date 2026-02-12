@@ -24,7 +24,7 @@ class TeslaRAGEngine:
         self.collection = self.client.create_collection(name="tesla_docs")
 
         # 3. Add data to Vector DB
-        # We generate embeddings manually here (The 3x way)
+        # We generate embeddings manually here
         embeddings = self.model.encode(chunks).tolist()
         ids = [f"id_{i}" for i in range(len(chunks))]
         self.collection.add(documents=chunks, embeddings=embeddings, ids=ids)
@@ -41,7 +41,7 @@ class TeslaRAGEngine:
         results = self.collection.query(query_embeddings=query_vec, n_results=3)
         context_chunks = results["documents"][0]
 
-        # 2. DATA SANITIZATION: The "3x" Cleanup
+        # 2. DATA SANITIZATION
         clean_sources = []
         for c in context_chunks:
             # A. Crunch multiple newlines into one to remove those big gaps

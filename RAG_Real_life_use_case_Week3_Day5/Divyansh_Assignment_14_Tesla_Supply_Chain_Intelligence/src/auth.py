@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# 3x Strategy: Using two different secrets for higher security
+# two different secrets for higher security
 ACCESS_SECRET = os.getenv("JWT_ACCESS_SECRET")
 REFRESH_SECRET = os.getenv("JWT_REFRESH_SECRET")
 

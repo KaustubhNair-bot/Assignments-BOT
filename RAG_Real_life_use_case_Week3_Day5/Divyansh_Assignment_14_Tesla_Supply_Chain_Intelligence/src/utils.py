@@ -9,7 +9,7 @@ def process_pdfs(data_path):
             md_text = pymupdf4llm.to_markdown(os.path.join(data_path, file))
             all_text += md_text
 
-    # Native Chunking (3x Logic: Split by double newline, join until 1000 chars)
+    # Native Chunking (Split by double newline, join until 1000 chars)
     # This is better because it respects paragraph breaks
     raw_chunks = all_text.split("\n\n")
     final_chunks = []
