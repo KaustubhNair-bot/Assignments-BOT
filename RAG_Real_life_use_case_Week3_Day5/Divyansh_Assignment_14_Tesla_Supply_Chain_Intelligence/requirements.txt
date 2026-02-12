@@ -1,0 +1,10 @@
+streamlit
+langchain
+langchain-community
+langchain-groq
+chromadb
+sentence-transformers
+pymupdf4llm
+python-dotenv
+PyJWT
+rank_bm25

@@ -1,0 +1,28 @@
+# --- 1. Python Security & Secrets ---
+.env
+.flaskenv
+*.pyc
+__pycache__/
+
+# --- 2. Virtual Environments ---
+venv/
+env/
+.venv/
+ENV/
+venv311/
+
+# --- 3. Vector Database (ChromaDB) ---
+# We ignore the local storage so the repo stays light
+chroma_db/
+*.db
+*.sqlite3
+
+# --- 4. OS & IDE Junk ---
+.DS_Store
+.vscode/
+.idea/
+
+# --- 5. Data Files ---
+# If your 'data' folder has very large PDFs, ignore them 
+# and tell users to add their own in the README.
+# data/*.pdf
