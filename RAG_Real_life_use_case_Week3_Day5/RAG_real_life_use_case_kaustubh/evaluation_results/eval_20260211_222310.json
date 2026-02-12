@@ -1,0 +1,352 @@
+{
+  "timestamp": "2026-02-11T22:22:19.481402",
+  "model": "llama-3.3-70b-versatile",
+  "rag_stats": {
+    "total_chunks": 122,
+    "index_vectors": 122,
+    "embedding_model": "all-MiniLM-L6-v2",
+    "embedding_dim": 384,
+    "chunk_size": 500,
+    "chunk_overlap": 100
+  },
+  "test_results": [
+    {
+      "test_id": 1,
+      "question": "What is the cheapest prepaid plan available on Airtel?",
+      "category": "Prepaid Plans",
+      "keyword_evaluation": {
+        "score": 0.5,
+        "matched": [
+          "₹79",
+          "28 days"
+        ],
+        "missed": [
+          "voice calling",
+          "no data"
+        ],
+        "total_expected": 4,
+        "total_matched": 2
+      },
+      "hallucination_evaluation": {
+        "hallucination_rate": 0.2,
+        "total_claims": 5,
+        "supported_claims": 4,
+        "unsupported_claims": 1,
+        "unsupported_details": [
+          "₹99,"
+        ],
+        "supported_details": [
+          "₹99",
+          "28 days",
+          "500 MB",
+          "₹79"
+        ]
+      },
+      "response_length": 1095,
+      "num_chunks_retrieved": 5
+    },
+    {
+      "test_id": 2,
+      "question": "Tell me about the Airtel Infinity ₹999 postpaid plan. What OTT subscriptions are included?",
+      "category": "Postpaid Plans",
+      "keyword_evaluation": {
+        "score": 0.4,
+        "matched": [
+          "Netflix",
+          "₹999"
+        ],
+        "missed": [
+          "Disney+",
+          "Amazon Prime",
+          "150 GB"
+        ],
+        "total_expected": 5,
+        "total_matched": 2
+      },
+      "hallucination_evaluation": {
+        "hallucination_rate": 0.0,
+        "total_claims": 2,
+        "supported_claims": 2,
+        "unsupported_claims": 0,
+        "unsupported_details": [],
+        "supported_details": [
+          "₹999",
+          "₹399"
+        ]
+      },
+      "response_length": 1773,
+      "num_chunks_retrieved": 5
+    },
+    {
+      "test_id": 3,
+      "question": "How can I port my number to Airtel?",
+      "category": "Porting / MNP",
+      "keyword_evaluation": {
+        "score": 0.8333,
+        "matched": [
+          "PORT",
+          "1900",
+          "UPC",
+          "Unique Porting Code",
+          "₹6.46"
+        ],
+        "missed": [
+          "3-7 working days"
+        ],
+        "total_expected": 6,
+        "total_matched": 5
+      },
+      "hallucination_evaluation": {
+        "hallucination_rate": 0.0,
+        "total_claims": 2,
+        "supported_claims": 2,
+        "unsupported_claims": 0,
+        "unsupported_details": [],
+        "supported_details": [
+          "₹6",
+          "4 days"
+        ]
+      },
+      "response_length": 1409,
+      "num_chunks_retrieved": 5
+    },
+    {
+      "test_id": 4,
+      "question": "What are the international roaming charges for the USA?",
+      "category": "International Roaming",
+      "keyword_evaluation": {
+        "score": 0.75,
+        "matched": [
+          "₹196",
+          "500 MB",
+          "USA"
+        ],
+        "missed": [
+          "35+ countries"
+        ],
+        "total_expected": 4,
+        "total_matched": 3
+      },
+      "hallucination_evaluation": {
+        "hallucination_rate": 0.0,
+        "total_claims": 5,
+        "supported_claims": 5,
+        "unsupported_claims": 0,
+        "unsupported_details": [],
+        "supported_details": [
+          "60 GB",
+          "₹3",
+          "₹5",
+          "₹196",
+          "500 MB"
+        ]
+      },
+      "response_length": 1377,
+      "num_chunks_retrieved": 5
+    },
+    {
+      "test_id": 5,
+      "question": "What is Airtel's refund policy for prepaid recharges?",
+      "category": "Refund Policy",
+      "keyword_evaluation": {
+        "score": 1.0,
+        "matched": [
+          "non-refundable",
+          "24 hours",
+          "talk-time balance",
+          "7 working days"
+        ],
+        "missed": [],
+        "total_expected": 4,
+        "total_matched": 4
+      },
+      "hallucination_evaluation": {
+        "hallucination_rate": 0.0,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "unsupported_claims": 0,
+        "unsupported_details": [],
+        "supported_details": []
+      },
+      "response_length": 1889,
+      "num_chunks_retrieved": 5
+    },
+    {
+      "test_id": 6,
+      "question": "What broadband plan gives me 1 Gbps speed?",
+      "category": "Broadband",
+      "keyword_evaluation": {
+        "score": 0.2,
+        "matched": [
+          "1 Gbps"
+        ],
+        "missed": [
+          "Ultra Plan",
+          "₹3,999",
+          "no FUP",
+          "truly unlimited"
+        ],
+        "total_expected": 5,
+        "total_matched": 1
+      },
+      "hallucination_evaluation": {
+        "hallucination_rate": 0.5,
+        "total_claims": 2,
+        "supported_claims": 1,
+        "unsupported_claims": 1,
+        "unsupported_details": [
+          "1 Gb"
+        ],
+        "supported_details": [
+          "300 Mb"
+        ]
+      },
+      "response_length": 1336,
+      "num_chunks_retrieved": 5
+    },
+    {
+      "test_id": 7,
+      "question": "How do I file a complaint with Airtel?",
+      "category": "Customer Support",
+      "keyword_evaluation": {
+        "score": 0.6,
+        "matched": [
+          "121",
+          "Level 1",
+          "Docket Number"
+        ],
+        "missed": [
+          "7 working days",
+          "Appellate Authority"
+        ],
+        "total_expected": 5,
+        "total_matched": 3
+      },
+      "hallucination_evaluation": {
+        "hallucination_rate": 0.0,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "unsupported_claims": 0,
+        "unsupported_details": [],
+        "supported_details": []
+      },
+      "response_length": 2391,
+      "num_chunks_retrieved": 5
+    },
+    {
+      "test_id": 8,
+      "question": "What are the benefits of the Airtel Thanks Platinum tier?",
+      "category": "Rewards",
+      "keyword_evaluation": {
+        "score": 0.0,
+        "matched": [],
+        "missed": [
+          "Netflix",
+          "ZEE5",
+          "SonyLIV",
+          "airport lounge",
+          "handset protection",
+          "relationship manager"
+        ],
+        "total_expected": 6,
+        "total_matched": 0
+      },
+      "hallucination_evaluation": {
+        "hallucination_rate": 0.0,
+        "total_claims": 2,
+        "supported_claims": 2,
+        "unsupported_claims": 0,
+        "unsupported_details": [],
+        "supported_details": [
+          "₹1,599",
+          "₹3,000"
+        ]
+      },
+      "response_length": 1458,
+      "num_chunks_retrieved": 5
+    },
+    {
+      "test_id": 9,
+      "question": "What happens if I exceed the fair usage limit on my prepaid plan?",
+      "category": "FUP Policy",
+      "keyword_evaluation": {
+        "score": 0.75,
+        "matched": [
+          "64 Kbps",
+          "speed is reduced",
+          "12:00 AM"
+        ],
+        "missed": [
+          "data resets"
+        ],
+        "total_expected": 4,
+        "total_matched": 3
+      },
+      "hallucination_evaluation": {
+        "hallucination_rate": 0.0,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "unsupported_claims": 0,
+        "unsupported_details": [],
+        "supported_details": [
+          "64 Kbps"
+        ]
+      },
+      "response_length": 1418,
+      "num_chunks_retrieved": 5
+    },
+    {
+      "test_id": 10,
+      "question": "How can I cancel my Airtel postpaid connection?",
+      "category": "Cancellation",
+      "keyword_evaluation": {
+        "score": 0.6,
+        "matched": [
+          "Airtel store",
+          "ID proof",
+          "outstanding bills"
+        ],
+        "missed": [
+          "₹500",
+          "60 working days"
+        ],
+        "total_expected": 5,
+        "total_matched": 3
+      },
+      "hallucination_evaluation": {
+        "hallucination_rate": 0.0,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "unsupported_claims": 0,
+        "unsupported_details": [],
+        "supported_details": []
+      },
+      "response_length": 1042,
+      "num_chunks_retrieved": 5
+    }
+  ],
+  "temperature_comparison": [
+    {
+      "setting": "Factual (T=0.0, P=0.5)",
+      "keyword_score": 0.5,
+      "hallucination_rate": 0.0,
+      "response_length": 926
+    },
+    {
+      "setting": "Balanced (T=0.3, P=0.85)",
+      "keyword_score": 0.5,
+      "hallucination_rate": 0.0,
+      "response_length": 804
+    },
+    {
+      "setting": "Creative (T=0.8, P=0.95)",
+      "keyword_score": 1.0,
+      "hallucination_rate": 0.0,
+      "response_length": 985
+    }
+  ],
+  "summary": {
+    "avg_keyword_score": 0.5633,
+    "avg_hallucination_rate": 0.07
+  }
+}
