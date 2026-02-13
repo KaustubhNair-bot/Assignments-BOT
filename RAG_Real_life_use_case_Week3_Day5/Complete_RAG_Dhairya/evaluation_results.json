@@ -1,0 +1,52 @@
+{
+    "timestamp": "2026-02-12 16:03:29",
+    "results_per_question": [
+        {
+            "groundedness": 5,
+            "relevance": 5,
+            "strategic_depth": 5,
+            "actionability": 5,
+            "justification": "The AI answer is based solely on the retrieved context, directly addresses the question, and provides a structured and analytical strategy with specific and measurable KPIs.",
+            "hallucinations_found": "None"
+        },
+        {
+            "groundedness": 5,
+            "relevance": 5,
+            "strategic_depth": 5,
+            "actionability": 5,
+            "justification": "The answer is based on the provided context, directly addresses the question, and provides a structured and analytical approach to optimizing McDonald's India menu portfolio. The answer includes specific and measurable initiatives and KPIs.",
+            "hallucinations_found": "None"
+        },
+        {
+            "groundedness": 5,
+            "relevance": 5,
+            "strategic_depth": 4,
+            "actionability": 4,
+            "justification": "The answer is based on the provided context and directly addresses the question. It provides a clear analysis of the strategic risks and proposes specific initiatives to mitigate them. The answer also includes measurable KPIs to evaluate the success of these initiatives.",
+            "hallucinations_found": "None"
+        },
+        {
+            "groundedness": 5,
+            "relevance": 5,
+            "strategic_depth": 5,
+            "actionability": 5,
+            "justification": "The answer is based on the provided context, which includes information about McDonald's India, Jubilant FoodWorks, and the competitive landscape in India. The answer provides a clear and structured analysis of the situation and offers specific, measurable recommendations for McDonald's growth strategy.",
+            "hallucinations_found": "None"
+        },
+        {
+            "groundedness": 5,
+            "relevance": 5,
+            "strategic_depth": 5,
+            "actionability": 5,
+            "justification": "The answer is based solely on the provided context, directly addresses the question, and provides a structured analysis with specific and measurable recommendations.",
+            "hallucinations_found": "None"
+        }
+    ],
+    "summary": {
+        "groundedness_avg": 5,
+        "relevance_avg": 5,
+        "strategic_depth_avg": 4.8,
+        "actionability_avg": 4.8,
+        "overall_score": 4.9
+    }
+}

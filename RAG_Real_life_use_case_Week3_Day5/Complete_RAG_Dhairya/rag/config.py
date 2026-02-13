@@ -1,0 +1,5 @@
+CHUNK_SIZE = 1000
+CHUNK_OVERLAP = 200
+EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+VECTOR_DB_DIR = "data/vector_store"
+COLLECTION_NAME = "mcdonalds_rag"
