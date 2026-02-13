@@ -29,8 +29,8 @@ A comprehensive RAG (Retrieval-Augmented Generation) system designed as a **Busi
 
 ## 🛠️ Tech Stack
 
-| Component | Technology | Version | Purpose |
-|-----------|------------|---------|---------|
+| Component | Technology | Purpose |
+|-----------|------------|---------|
 | **Embeddings** | all-MiniLM-L6-v2 | Sentence Transformers (Hugging Face) |
 | **Vector Store** | ChromaDB 0.4.22 | Semantic Search & Retrieval |
 | **LLM** | Groq Mixtral-8x7b-32768 | Natural Language Generation |
@@ -81,7 +81,7 @@ mcdonalds_rag/
 
 ```bash
 # Clone and navigate
-cd mcdonalds_rag
+cd Complete_RAG_Dhairya
 
 # Create virtual environment
 python3 -m venv venv
@@ -91,7 +91,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # Set up environment variables
-cp .env.example .env
+cp .env
 # Edit .env with your API keys
 ```
 
@@ -122,10 +122,10 @@ python eval.py
 ### RAG Pipeline (`main.py`)
 
 ```python
-from rag import rag_query
+from rag.llm import generate_response
 
 # Query the system
-result = rag_query("What are McDonald's financial performance trends?")
+result = generate_response("What are McDonald's financial performance trends?")
 print(f"Answer: {result['response']}")
 print(f"Sources: {result['sources']}")
 ```
@@ -147,12 +147,12 @@ print(f"Sources: {result['sources']}")
 
 ### Evaluation Metrics
 
-| Metric | Description | Weight | Target |
-|---------|-------------|--------|--------|
-| **Groundness** | Factual accuracy based on provided context | 30% | ≥ 0.8 |
-| **Relevance** | How well answer addresses the query | 25% | ≥ 0.7 |
-| **Strategic Depth** | Business insight quality | 25% | ≥ 0.7 |
-| **Actionability** | Practical recommendations | 20% | ≥ 0.6 |
+| Metric | Description | Target |
+|---------|-------------|--------|
+| **Groundness** | Factual accuracy based on provided context | ≥ 0.8 |
+| **Relevance** | How well answer addresses the query | ≥ 0.7 |
+| **Strategic Depth** | Business insight quality | ≥ 0.7 |
+| **Actionability** | Practical recommendations | ≥ 0.6 |
 
 ### Evaluation Process
 
@@ -181,18 +181,6 @@ The system uses carefully crafted prompts that enforce:
 - **Business Acumen**: Strategic thinking and analysis
 - **Data Citation**: Source attribution and transparency
 - **Professional Communication**: Clear, structured responses
-
-## 📈 Performance Benchmarks
-
-### System Performance
-
-| Component | Metric | Value |
-|-----------|--------|-------|
-| **Embedding Generation** | ~100 chunks/sec |
-| **Vector Search** | <100ms latency |
-| **LLM Inference** | ~2 sec/response |
-| **End-to-End RAG** | <5 sec total |
-
 
 ## 🔧 Configuration
 
