@@ -23,7 +23,6 @@ An advanced Retrieval-Augmented Generation (RAG) system powered by Large Languag
 - [Project Structure](#project-structure)
 - [Future Enhancements](#future-enhancements)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -384,8 +383,6 @@ The app will open in your browser at `http://localhost:8501`
    - **Creativity (Temperature):** 0.0 (factual) to 1.0 (creative)
    - **Show Reasoning (CoT):** Display step-by-step thinking
    - **Query Rewriting:** Enable context-aware query enhancement
-   - **Cross-Encoder Reranking:** Enable two-stage retrieval
-   - **Show Structured Data:** Display extracted specs/codes
 
 3. **Multi-Turn Conversations:**
    - Ask follow-up questions naturally
@@ -462,47 +459,29 @@ Tests the system across:
 
 ## Screenshots
 
-### Recommended Screenshot Captures
+### 1. Login Screen
+![Login Screen](images/01_login_screen.png)
 
-To showcase your system, capture these scenarios:
+### 2. Main Chat Interface
+![Main Interface](images/02_main_interface.png)
 
-#### 1. **Login Screen**
-- Show the authentication interface
-- Filename: `01_login_screen.png`
+### 3. Simple Query with High Confidence
+**Query:** "What M.2 SSD can I install in my PS5?"
 
-#### 2. **Main Chat Interface (Initial State)**
-- Empty chat with sidebar visible
-- All toggle options visible
-- Filename: `02_main_interface.png`
+![Simple Query](images/03_simple_query_high_confidence.png)
 
-#### 3. **Simple Query with High Confidence**
-Query: "What M.2 SSD can I install in my PS5?"
-Settings: 
-- Temperature: 0.1
-- Query Rewriting: ON
-- Reranking: ON
-- Show Structured Data: ON
-
-Filename: `03_simple_query_high_confidence.png`
-
-#### 4. **Multi-Turn Conversation**
-Query sequence:
+### 4. Multi-Turn Conversation
+**Queries:** 
 1. "How do I boot into Safe Mode?"
-2. "What should I do after that?" (follow-up)
+2. "What should I do after that?"
 
-Settings:
-- Show Query Rewriting indicator
-- Filename: `04_multi_turn_conversation.png`
+![Multi-Turn Conversation](images/04_multi_turn_conversation.png)
 
-#### 5. **Retrieved Source Context Expanded**
-- Show the expandable source chunks
-- Display relevance scores
-- Filename: `05_source_context_retrieval.png`
+### 5. Retrieved Source Context
+![Source Context](images/05_source_context_retrieval.png)
 
-#### 6. **Architecture Diagram**
-- Create a clean diagram of the system architecture
-- Include all components (FAISS, LLM, Reranker)
-- Filename: `06_architecture_diagram.png`
+### 6. System Architecture
+![Architecture Diagram](images/06_architecture_diagram.jpeg)
 
 ---
 
@@ -518,6 +497,14 @@ playstation-rag-support/
 ├── faiss_index/
 │   ├── index.faiss                  # FAISS vector index
 │   └── chunks.pkl                   # Pickled text chunks
+│
+├── images/                          # Screenshots
+│   ├── 01_login_screen.png
+│   ├── 02_main_interface.png
+│   ├── 03_simple_query_high_confidence.png
+│   ├── 04_multi_turn_conversation.png
+│   ├── 05_source_context_retrieval.png
+│   └── 06_architecture_diagram.jpeg
 │
 ├── app.py                           # Streamlit web interface
 ├── auth.py                          # Authentication module
@@ -591,14 +578,15 @@ playstation-rag-support/
 
 ---
 
-## Development Setup
+## Contributing
+
+### Development Setup
 ```bash
 git clone https://github.com/yourusername/playstation-rag-support.git
 cd playstation-rag-support
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-pip install -r requirements-dev.txt  # For linting, testing
 ```
 
 ### Code Style
@@ -621,7 +609,6 @@ pytest tests/
 3. Commit changes (`git commit -m 'Add amazing feature'`)
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
 
 ---
 
