@@ -1,0 +1,7 @@
+streamlit
+faiss-cpu>=1.11.0
+sentence-transformers
+PyPDF2
+groq
+numpy
+python-dotenv
