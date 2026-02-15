@@ -216,15 +216,16 @@ def extract_structured_data(query, answer):
     return structured_data if structured_data else None
 
 
-# conversational answer generation
+# conversational answer generation WITH TRUE CHAIN-OF-THOUGHT
 def generate_answer_with_memory(
     query, 
     retrieved_chunks, 
+    retrieval_scores,
     conversation_memory,
     temperature=0.3, 
     show_cot=False
 ):
-    """Generate answer with conversation context"""
+    """Generate answer with conversation context and optional CoT reasoning"""
     
     context = "\n\n".join(retrieved_chunks)
     conversation_context = conversation_memory.get_context()
@@ -242,12 +243,49 @@ Guidelines:
 7. For technical specs, be precise with model numbers, error codes, and part numbers.
 """
 
+    # CRITICAL CHANGE: True Chain-of-Thought for retrieval logic
     if show_cot:
-        cot_instruction = """
-Step 1: Review conversation history for context.
-Step 2: Determine if this is a follow-up question.
-Step 3: Retrieve relevant information from knowledge base.
-Step 4: Provide the final answer in a polite and helpful tone.
+        # Build retrieval metadata for the model to reason about
+        retrieval_info = "\n".join([
+            f"Chunk {i+1} (Relevance Score: {retrieval_scores[i]:.3f}):\n{chunk[:150]}..."
+            for i, chunk in enumerate(retrieved_chunks)
+        ])
+        
+        cot_instruction = f"""
+CRITICAL: You MUST explain your retrieval and reasoning process BEFORE providing the answer.
+
+Available Retrieved Information:
+{retrieval_info}
+
+Use this EXACT format:
+
+**🔍 RETRIEVAL REASONING:**
+
+**Query Analysis:** 
+[Explain what the user is specifically asking for and any technical terms involved]
+
+**Source Selection & Relevance:**
+[For each relevant chunk, explain:
+ - Which chunk(s) you're using (mention by number and score)
+ - Why each chunk is relevant to answering this query
+ - What specific information each provides]
+
+**Confidence Assessment:**
+[Based on the retrieval scores and content quality:
+ - How confident are you in this answer (High/Medium/Low)?
+ - Are there any gaps in the retrieved information?
+ - Is the information sufficient and authoritative?]
+
+**Information Synthesis:**
+[If using multiple chunks, explain how you're combining them.
+ If conversation history is relevant, mention how it helps interpret the query.]
+
+---
+
+**💡 FINAL ANSWER:**
+[Now provide your actual support response using the retrieved information]
+
+Remember: The user can see the retrieved chunks separately, so your reasoning should explain WHY and HOW you're using them, not just repeat them.
 """
     else:
         cot_instruction = """
@@ -256,7 +294,7 @@ Consider conversation history for context.
 Use bullet points for troubleshooting steps.
 Highlight important technical terms in **bold**.
 Include specific model numbers, error codes, or part numbers when relevant.
-Do explain your reasoning in simple english.
+Provide clear, actionable guidance based on the retrieved context.
 """
 
     user_prompt = f"""
@@ -280,7 +318,7 @@ Instructions:
         ],
         temperature=temperature,
         top_p=0.9,
-        max_tokens=600
+        max_tokens=800 if show_cot else 600  # More tokens for CoT reasoning
     )
 
     return completion.choices[0].message.content
@@ -305,13 +343,13 @@ def inject_official_links(answer, retrieved_chunks, structured_data):
     # add error code specific link if error codes detected
     if structured_data and "error_codes" in structured_data:
         answer += f"\n\n**Detected Error Code(s):** {', '.join(structured_data['error_codes'])}"
-        answer += f"\n📗 Error Code Reference: {official_links['error']}"
+        answer += f"\n🔗 Error Code Reference: {official_links['error']}"
         return answer
     
     # add general support link
     for keyword, link in official_links.items():
         if keyword in combined_text:
-            answer += f"\n\n📗 For additional guidance, visit:\n{link}"
+            answer += f"\n\n🔗 For additional guidance, visit:\n{link}"
             break
     
     return answer
@@ -351,20 +389,21 @@ def rag_pipeline_enhanced(
             "However, here is some related information that may help:"
         )
     else:
-        # generate with conversation memory
+        # CRITICAL: Pass scores to generation function for CoT reasoning
         answer = generate_answer_with_memory(
-            original_query,  # using original query for generation
-            retrieved, 
+            original_query,
+            retrieved,
+            scores,  # NEW: Passing scores for CoT analysis
             conversation_memory,
             temperature, 
             show_cot
         )
     
-    structured_data = extract_structured_data(original_query + " " + answer, answer) # extracting structured data
+    structured_data = extract_structured_data(original_query + " " + answer, answer)
     
-    answer = inject_official_links(answer, retrieved, structured_data) # injecting official links
+    answer = inject_official_links(answer, retrieved, structured_data)
     
-    conversation_memory.add_turn(original_query, answer) # updating conversation memory
+    conversation_memory.add_turn(original_query, answer)
     
     return {
         "answer": answer,
